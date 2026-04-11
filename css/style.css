@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&amp;family=Inter:wght@400;500&amp;display=swap');
+
+:root {
+    --gold: #d4af77;
+}
+
+* {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+.tailwind-configured {
+    font-family: 'Inter', system_ui, sans-serif;
+}
+
+.heading-font {
+    font-family: 'Playfair Display', sans-serif;
+}
+
+
+.section-header {
+    position: relative;
+}
+
+.section-header::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 3px;
+    background: #d4af77;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.smooth-scroll {
+    scroll-behavior: smooth;
+}
+
+/* Mobile-first responsive adjustments */
+@media (max-width: 768px) {
+    .hero-bg h1 {
+        font-size: 3rem;
+    }
+    .section-header::after {
+        width: 60px;
+    }
+}
+
+/* Sticky anchor offset for smooth scrolling */
+[id] {
+    scroll-margin-top: 6rem;
+}
+
+/* Booking modal styling */
+#booking-modal {
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(10px);
+}
+
+#booking-modal .modal-panel {
+    max-width: 34rem;
+    width: 100%;
+    border: 1px solid rgba(212, 175, 119, 0.16);
+}
+
+#booking-modal .modal-panel input,
+#booking-modal .modal-panel select {
+    border-color: rgba(255, 255, 255, 0.18);
+}
+
+#booking-modal .modal-panel button[type="submit"] {
+    min-width: 10rem;
+}
