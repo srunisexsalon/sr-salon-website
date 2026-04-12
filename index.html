@@ -122,7 +122,7 @@
     <main>
 
  <!-- HERO SECTION -->
-<section id="home" class="relative h-screen flex items-center overflow-hidden">
+<section id="home" class="relative min-h-screen flex items-center overflow-hidden">
 
     <!-- Responsive Hero Image -->
     <picture class="absolute inset-0 w-full h-full">
@@ -142,7 +142,7 @@
     <div class="absolute inset-0 bg-black/60"></div>
 
     <!-- Content -->
-    <div class="relative max-w-7xl mx-auto px-6 text-white z-10">
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 text-white z-10">
         <div class="max-w-2xl">
 
             <div class="inline-flex items-center bg-white/10 backdrop-blur-md text-white text-sm px-6 py-2 rounded-3xl mb-6 border border-white/30">
@@ -153,8 +153,8 @@
                 BEST UNISEX SALON IN GAYA
             </div>
 
-            <h1 class="heading-font text-5xl md:text-7xl leading-tight font-semibold mb-4">
-    Best Unisex Salon in Gaya – SR Unisex Salon
+           <h1 class="heading-font text-3xl md:text-6xl leading-tight font-semibold mb-4 break-words">
+    Best Unisex Salon in Gaya <br> SR Unisex Salon
 </h1>
 
 <h2 class="text-2xl md:text-3xl text-white/90 mb-6">
@@ -165,7 +165,7 @@
                 Best unisex salon in Gaya. Expert hair styling, skin treatments, bridal makeup & more in a luxurious space.
             </p>
 
-            <div class="flex flex-wrap gap-4">
+            <div class="flex flex-col sm:flex-row gap-4">
                 <a href="#book"
                    data-book-modal="true"
                    class="bg-[#d4af77] hover:bg-white hover:text-[#1a1a1a] text-[#1a1a1a] font-semibold px-8 py-4 rounded-3xl text-lg flex items-center gap-3 shadow-xl book-appointment">
@@ -232,15 +232,11 @@ Our mission is to bring high-end grooming and impeccable hygiene standards to th
                     <span class="text-gray-500 text-sm">Follow us:</span>
                     <a href="https://www.instagram.com/sr_unisexsalon?igsh=MXNqOHk3eHBkODg5OA==" target="_blank" rel="noopener noreferrer" title="Open Instagram profile" class="w-12 h-12 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 rounded-2xl flex items-center justify-center text-white hover:scale-110 transition transform">
                         <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                     <span class="text-gray-500 text-sm">Follow us:</span>
+
                     <a href="https://www.facebook.com/share/1DsPrm2BEA/" target="_blank" rel="noopener noreferrer" title="Open Facebook page" class="w-12 h-12 bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 rounded-2xl flex items-center justify-center text-white hover:scale-110 transition transform">
                         <i class="fab fa-facebook text-xl"></i>
                     </a>
-                    <span class="text-gray-500 text-sm">Get Directions:</span>
-                    <a href="https://www.google.com/maps/search/?api=1&query=24.791130948026993,84.98983507595072" target="_blank" rel="noopener noreferrer" title="Open map directions" class="w-12 h-12 bg-red-500 rounded-2xl flex items-center justify-center text-white hover:scale-110 transition transform">
-                        <i class="fas fa-map-marker-alt text-xl"></i>
-                    </a>
+
                 </div>
             </div>
             <div class="rounded-[2.5rem] overflow-hidden shadow-xl ring-1 ring-black/5">
@@ -688,22 +684,33 @@ Our mission is to bring high-end grooming and impeccable hygiene standards to th
                     <p class="mt-12 text-sm text-gray-500">Open 7 days • 9:00 AM – 9:00 PM</p>
                 </div>
                 
-                <!-- Google Map Embed -->
-              <div class="md:col-span-5 rounded-3xl overflow-hidden border border-[#d4af77]/20 shadow-inner">
-    
-    <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.126225097189!2d84.98983507595072!3d24.791130948026993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f32be18ca696eb%3A0xbadb1ca60e94c82f!2sSR%20Unisex%20Salon!5e0!3m2!1sen!2sin!4v1775634961676!5m2!1sen!2sin"
-        width="100%" 
-        height="100%" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
+<!-- CONTACT + MAP SECTION -->
+<div class="md:col-span-5">
 
+    <!-- Heading (SEO Boost) -->
+    <h3 class="text-2xl font-semibold mb-4 text-[#1a1a1a]">
+        Find SR Unisex Salon on Google Maps
+    </h3>
+
+    <!-- Sub Text -->
+    <p class="text-gray-600 mb-4 text-sm">
+        Visit the best unisex salon in Gaya. Click below to get directions easily.
+    </p>
+
+    <!-- Map Container -->
+    <div class="rounded-[2rem] overflow-hidden border border-[#d4af77]/30 shadow-lg hover:shadow-2xl transition h-[350px] md:h-[450px]">
+        
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.126225097189!2d84.98983507595072!3d24.791130948026993!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f32be18ca696eb%3A0xbadb1ca60e94c82f!2sSR%20Unisex%20Salon!5e0!3m2!1sen!2sin!4v1775634961676!5m2!1sen!2sin"
+            class="w-full h-full"
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+    </div>
 </div>
-            </div>
-        </div>
     </section>
 
     </main>
