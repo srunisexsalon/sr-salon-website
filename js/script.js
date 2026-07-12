@@ -51,7 +51,7 @@ function addMobileCallLink() {
         if (!existingLink) {
             const callItem = document.createElement('a');
             callItem.href = `tel:${PHONE_NUMBER}`;
-            callItem.className = 'py-2 inline-flex items-center gap-3 font-semibold text-black';
+            callItem.className = 'py-2 inline-flex items-center gap-3 text-lg font-semibold text-black';
             callItem.innerHTML = '<i class="fa-solid fa-phone"></i> Call Now';
             callItem.setAttribute('aria-label', `Call ${PHONE_DISPLAY}`);
 
@@ -221,7 +221,7 @@ function autoInternalLink(content) {
 
         updated = updated.replace(
             regex,
-            `<a href="${link}" class="text-[#d4af77] font-semibold hover:underline">$1</a>`
+            `<a href="${link}" class="text-[#d4af77] text-lg font-semibold hover:underline">$1</a>`
         );
     });
 
