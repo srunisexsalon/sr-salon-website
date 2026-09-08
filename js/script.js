@@ -1,250 +1,131 @@
-// ================================
-// SR UNISEX SALON - MAIN SCRIPT
-// CLEAN + FIXED + SEO READY
-// ================================
+'use strict';
 
-const PHONE_NUMBER = '+919430001237';
-const PHONE_DISPLAY = '+91 94300 01237';
+/* ============================================================
+   SR UNISEX SALON - MAIN SCRIPT
+   Lightweight & Performance Optimized
+   ============================================================ */
 
-/* =========================
-   MOBILE MENU
-========================= */
-function toggleMobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    const icon = document.getElementById('hamburger-icon');
-    if (!menu || !icon) return;
+document.addEventListener('DOMContentLoaded', () => {
+    const menuButton = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('hamburger-icon');
 
-    menu.classList.toggle('hidden');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-xmark');
-}
+    /* --------------------------------------------------------
+       Mobile Menu
+       -------------------------------------------------------- */
 
-function closeMobileMenu() {
-    const menu = document.getElementById('mobile-menu');
-    const icon = document.getElementById('hamburger-icon');
-    if (!menu || !icon) return;
+    if (!menuButton || !mobileMenu) return;
 
-    menu.classList.add('hidden');
-    icon.classList.remove('fa-xmark');
-    icon.classList.add('fa-bars');
-}
+    const openMenu = () => {
+        mobileMenu.classList.remove('hidden');
 
-/* =========================
-   PHONE ACCESSIBILITY
-========================= */
-function setPhoneLinkAccessibility() {
-    document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-        if (!link.getAttribute('aria-label')) {
-            link.setAttribute('aria-label', `Call ${PHONE_DISPLAY}`);
+        menuButton.setAttribute('aria-expanded', 'true');
+
+        if (menuIcon) {
+            menuIcon.classList.remove('fa-bars');
+            menuIcon.classList.add('fa-xmark');
         }
-    });
-}
+    };
 
-/* =========================
-   MOBILE CALL LINK AUTO ADD
-========================= */
-function addMobileCallLink() {
-    document.querySelectorAll('#mobile-menu').forEach(menu => {
-        if (!menu) return;
+    const closeMenu = () => {
+        mobileMenu.classList.add('hidden');
 
-        const existingLink = menu.querySelector('a[href^="tel:"]');
-        if (!existingLink) {
-            const callItem = document.createElement('a');
-            callItem.href = `tel:${PHONE_NUMBER}`;
-            callItem.className = 'py-2 inline-flex items-center gap-3 text-lg font-semibold text-black';
-            callItem.innerHTML = '<i class="fa-solid fa-phone"></i> Call Now';
-            callItem.setAttribute('aria-label', `Call ${PHONE_DISPLAY}`);
+        menuButton.setAttribute('aria-expanded', 'false');
 
-            menu.prepend(callItem);
+        if (menuIcon) {
+            menuIcon.classList.remove('fa-xmark');
+            menuIcon.classList.add('fa-bars');
         }
-    });
-}
+    };
 
-/* =========================
-   BOOKING MODAL (WHATSAPP)
-========================= */
-function setupBookingModal() {
-    const modal = document.getElementById('booking-modal');
-    const openButtons = document.querySelectorAll('[data-book-modal]');
-    const closeButtons = modal ? modal.querySelectorAll('[data-modal-close]') : [];
-    const bookingForm = document.getElementById('booking-form');
+    const toggleMenu = () => {
+        const isOpen =
+            menuButton.getAttribute('aria-expanded') === 'true';
 
-    if (!modal) return;
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    };
 
-    function openModal(event) {
-        event?.preventDefault();
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.style.overflow = 'hidden';
-        console.log('Booking modal opened');
-    }
+    /* --------------------------------------------------------
+       Accessibility
+       -------------------------------------------------------- */
 
-    function closeModal() {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
-        console.log('Booking modal closed');
-    }
+    menuButton.type = 'button';
+    menuButton.setAttribute(
+        'aria-label',
+        'Toggle mobile navigation menu'
+    );
+    menuButton.setAttribute(
+        'aria-controls',
+        'mobile-menu'
+    );
+    menuButton.setAttribute(
+        'aria-expanded',
+        'false'
+    );
 
-    openButtons.forEach(btn => {
-        btn.addEventListener('click', openModal);
-    });
+    /* --------------------------------------------------------
+       Menu Button
+       -------------------------------------------------------- */
 
-    closeButtons.forEach(btn => {
-        btn.addEventListener('click', closeModal);
-    });
+    menuButton.addEventListener('click', toggleMenu);
 
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
-    });
+    /* --------------------------------------------------------
+       Close Menu When Navigation Link Is Clicked
+       -------------------------------------------------------- */
 
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeModal();
+    mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
     });
 
-    if (bookingForm) {
-        bookingForm.addEventListener('submit', function (event) {
-            event.preventDefault();
+    const serviceList = document.getElementById('service-list');
+    const serviceListToggle = document.getElementById('service-list-toggle');
 
-            const name = bookingForm.querySelector('[name="name"]').value.trim();
-            const phone = bookingForm.querySelector('[name="phone"]').value.trim();
-            const service = bookingForm.querySelector('[name="service"]').value;
+    if (serviceList && serviceListToggle) {
+        serviceListToggle.addEventListener('click', () => {
+            const isExpanded = serviceListToggle.getAttribute('aria-expanded') === 'true';
+            const toggleIcon = serviceListToggle.querySelector('i');
 
-            if (!name || !phone) {
-                alert('Please enter your name and mobile number.');
-                return;
+            serviceList.classList.toggle('service-list-collapsed', isExpanded);
+            serviceListToggle.setAttribute('aria-expanded', String(!isExpanded));
+            serviceListToggle.firstChild.textContent = isExpanded
+                ? 'Show more services'
+                : 'Show fewer services';
+
+            if (toggleIcon) {
+                toggleIcon.classList.toggle('fa-chevron-up', !isExpanded);
+                toggleIcon.classList.toggle('fa-chevron-down', isExpanded);
             }
-
-            let normalizedPhone = phone.replace(/\D/g, '');
-
-            if (normalizedPhone.length === 10) {
-                normalizedPhone = '91' + normalizedPhone;
-            } else if (!(normalizedPhone.length === 12 && normalizedPhone.startsWith('91'))) {
-                alert('Please enter a valid 10-digit mobile number.');
-                return;
-            }
-
-            const message = encodeURIComponent(
-                `Hi SR Unisex Salon, I want to book an appointment.\nName: ${name}\nPhone: ${phone}\nService: ${service}`
-            );
-
-            window.open(`https://wa.me/919430001237?text=${message}`, '_blank', 'noopener');
-            closeModal();
         });
     }
-}
 
-/* =========================
-   SMOOTH SCROLL FIXED
-========================= */
-function setupSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    const gallery = document.getElementById('gallery');
 
-            if (this.hasAttribute('data-book-modal')) return;
+    if (gallery) {
+        gallery.querySelectorAll('.aspect-square > img').forEach((image, index) => {
+            const tile = image.parentElement;
+            const link = document.createElement('a');
 
-            const href = this.getAttribute('href');
-            const target = document.querySelector(href);
-
-            if (target) {
-                e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                closeMobileMenu();
-            }
+            link.href = image.src;
+            link.target = '_blank';
+            link.rel = 'noopener';
+            link.className = `${tile.className} gallery-item`;
+            link.setAttribute('aria-label', `View gallery image ${index + 1}: ${image.alt}`);
+            link.appendChild(image);
+            tile.replaceWith(link);
         });
-    });
-}
-
-/* =========================
-   MOBILE MENU CLOSE ON CLICK
-========================= */
-function setupMobileMenuLinks() {
-    const menu = document.getElementById('mobile-menu');
-    if (!menu) return;
-
-    menu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', closeMobileMenu);
-    });
-}
-
-/* =========================
-   SECURITY FIX
-========================= */
-function setExternalLinkSecurity() {
-    document.querySelectorAll('a[target="_blank"]').forEach(link => {
-        link.setAttribute('rel', 'noopener noreferrer');
-    });
-}
-
-/* =========================
-   ACCESSIBILITY FIX
-========================= */
-function setupAccessibility() {
-    const menuButton = document.getElementById('mobile-menu-btn');
-
-    if (menuButton) {
-        menuButton.setAttribute('type', 'button');
-        menuButton.setAttribute('aria-label', 'Toggle mobile menu');
-    }
-}
-
-/* =========================
-   SEO INTERNAL LINK SYSTEM (NEW FIXED)
-========================= */
-const INTERNAL_LINKS = {
-    "best salon in Gaya": "/index.html",
-    "best facial in Gaya": "/services/facial-skin-care-gaya.html",
-    "hair care in Gaya": "/services/hair-spa-treatment-gaya.html",
-    "nail care in Gaya": "/services/manicure-pedicure-gaya.html",
-    "best bridal makeup in Gaya": "/services/bridal-makeup-gaya.html",
-    "advanced facial in Gaya": "/services/advanced-facial-gaya.html",
-    "d-tan cleanup in Gaya": "/services/d-tan-cleanup-gaya.html",
-    "best haircut in Gaya": "/services/hair-cut-styling-gaya.html",
-    "skin treatments in Gaya": "/services/skin-treatments-gaya.html",
-    "beauty blog in Gaya": "/blog/blog.html",
-    "skincare tips in Gaya": "/blog/skincare-tips.html",
-    "hair care tips in Gaya": "/blog/hair-care-tips.html",
-    "nail care tips in Gaya": "/blog/nail-care-tips.html",
-    "bridal makeup trends in Gaya": "/blog/bridal-makeup-trends.html",
-    'facial routine tips in Gaya': '/blog/facial-routine-tips.html',
-    "men  grooming tips in Gaya": "/blog/men-grooming-tips.html"
-};
-
-/* Optional function (use in blog pages if needed) */
-function autoInternalLink(content) {
-    let updated = content;
-
-    Object.entries(INTERNAL_LINKS).forEach(([keyword, link]) => {
-        const regex = new RegExp(`\\b(${keyword})\\b`, "gi");
-
-        updated = updated.replace(
-            regex,
-            `<a href="${link}" class="text-[#d4af77] text-lg font-semibold hover:underline">$1</a>`
-        );
-    });
-
-    return updated;
-}
-
-/* =========================
-   INIT
-========================= */
-document.addEventListener('DOMContentLoaded', function () {
-
-    const menuButton = document.getElementById('mobile-menu-btn');
-    if (menuButton) {
-        menuButton.addEventListener('click', toggleMobileMenu);
     }
 
-    setupSmoothScroll();
-    setupMobileMenuLinks();
-    setPhoneLinkAccessibility();
-    addMobileCallLink();
-    setupBookingModal();
-    setExternalLinkSecurity();
-    setupAccessibility();
+    /* --------------------------------------------------------
+       Close Menu With Escape Key
+       -------------------------------------------------------- */
 
-    console.log('%c✅ SR Unisex Salon Loaded Successfully 🚀', 'color:#d4af77;font-size:12px');
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape') {
+            closeMenu();
+        }
+    });
 });

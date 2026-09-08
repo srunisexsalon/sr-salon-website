@@ -1,125 +1,206 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset 
-xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <!-- HOMEPAGE (HIGHEST PRIORITY) -->
-  <url>
-    <loc>https://www.srunisexsalongaya.com/</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
-  <!-- 🔥 SERVICES (CONVERSION PAGES) -->
-  <url>
-    <loc>https://www.srunisexsalongaya.com/services/bridal-makeup-gaya.html</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
+    <!-- =====================================================
+         HOMEPAGE
+    ====================================================== -->
 
-  <url>
-    <loc>https://www.srunisexsalongaya.com/services/facial-skin-care-gaya.html</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+    <url>
+        <loc>https://srunisexsalongaya.com/</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
 
-  <url>
-    <loc>https://www.srunisexsalongaya.com/services/hair-spa-treatment-gaya.html</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
 
-  <!-- NORMAL SERVICES -->
-  <url>
-    <loc>https://www.srunisexsalongaya.com/services/hair-cut-styling-gaya.html</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+    <!-- =====================================================
+         LEGAL & UTILITY PAGES
+    ====================================================== -->
 
-  <url>
-    <loc>https://www.srunisexsalongaya.com/services/manicure-pedicure-gaya.html</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+    <url>
+        <loc>https://srunisexsalongaya.com/privacy-policy.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
 
-  <url>
-    <loc>https://www.srunisexsalongaya.com/services/d-tan-cleanup-gaya.html</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+    <url>
+        <loc>https://srunisexsalongaya.com/terms-and-conditions.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.3</priority>
+    </url>
 
-  <url>
-    <loc>https://www.srunisexsalongaya.com/services/skin-treatment-gaya.html</loc>
-    <lastmod>2026-04-26</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
 
-  <url>
-    <loc>https://www.srunisexsalongaya.com/services/advance-facial-gaya.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+    <!-- =====================================================
+         SERVICE PAGES
+    ====================================================== -->
 
-  <!-- BLOG HUB (SEO BOOST PAGE) -->
-  <url>
-    <loc>https://www.srunisexsalongaya.com/blog/blog.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+    <url>
+        <loc>https://srunisexsalongaya.com/services/acne-treatment-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
 
-  <!-- 🔥 HIGH VALUE BLOG POSTS (PRIORITY BOOST) -->
-  <url>
-    <loc>https://www.srunisexsalongaya.com/blog/skincare-tips.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+    <url>
+        <loc>https://srunisexsalongaya.com/services/advanced-facial-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
 
-  <url>
-    <loc>https://www.srunisexsalongaya.com/blog/haircare-tip.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
+    <url>
+        <loc>https://srunisexsalongaya.com/services/bridal-makeup-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
 
-  <!-- MEDIUM BLOG POSTS -->
-  <url>
-    <loc>https://www.srunisexsalongaya.com/blog/nail-care-tips.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+    <url>
+        <loc>https://srunisexsalongaya.com/services/cleanup-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
 
-  <url>
-    <loc>https://www.srunisexsalongaya.com/blog/facial-routine-tips.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+    <url>
+        <loc>https://srunisexsalongaya.com/services/d-tan-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
 
-  <!-- 🔥 MONEY PAGE BLOG -->
-  <url>
-    <loc>https://www.srunisexsalongaya.com/blog/bridal-makeup-trends.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
+    <url>
+        <loc>https://srunisexsalongaya.com/services/facial-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
 
-  <url>
-    <loc>https://www.srunisexsalongaya.com/blog/men-grooming-tips.html</loc>
-    <lastmod>2026-05-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+    <url>
+        <loc>https://srunisexsalongaya.com/services/hair-botox-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://srunisexsalongaya.com/services/hair-colour-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://srunisexsalongaya.com/services/hair-cut-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://srunisexsalongaya.com/services/hair-spa-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://srunisexsalongaya.com/services/hair-straightening-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://srunisexsalongaya.com/services/hair-styling-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://srunisexsalongaya.com/services/keratin-treatment-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://srunisexsalongaya.com/services/laser-hair-removal-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://srunisexsalongaya.com/services/manicure-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://srunisexsalongaya.com/services/nail-extension-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://srunisexsalongaya.com/services/nanoplastia-treatment-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://srunisexsalongaya.com/services/pedicure-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://srunisexsalongaya.com/services/permanent-makeup-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://srunisexsalongaya.com/services/skin-care-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://srunisexsalongaya.com/services/skin-treatment-in-gaya.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+
+    <!-- =====================================================
+         BLOG
+    ====================================================== -->
+
+    <url>
+        <loc>https://srunisexsalongaya.com/blog/blog.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://srunisexsalongaya.com/blog/bridal-makeup-trends.html</loc>
+        <lastmod>2026-09-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 
 </urlset>

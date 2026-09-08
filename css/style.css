@@ -1,6 +1,11 @@
+/* =========================================================
+   SR UNISEX SALON - CLEAN & OPTIMIZED CSS
+   ========================================================= */
+
 /* =========================
    ROOT VARIABLES
 ========================= */
+
 :root {
     --gold: #d4af77;
     --dark: #1a1a1a;
@@ -10,6 +15,7 @@
 /* =========================
    RESET & BASE
 ========================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -28,13 +34,14 @@ body {
     line-height: 1.6;
     color: var(--dark);
     background: var(--light);
-    padding-bottom: 70px;
     padding-top: 80px;
+    padding-bottom: 70px;
 }
 
 /* =========================
-   NAVBAR FIX
+   NAVBAR
 ========================= */
+
 header {
     position: fixed;
     top: 0;
@@ -42,42 +49,46 @@ header {
     width: 100%;
     z-index: 1000;
     background: #fff;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* =========================
    TYPOGRAPHY
 ========================= */
+
 .heading-font {
     font-family: 'Playfair Display', serif;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     word-break: break-word;
 }
 
 /* =========================
    CONTAINER
 ========================= */
+
 .container {
     width: 100%;
     max-width: 1200px;
-    margin: auto;
-    padding: 0 15px;
+    margin-inline: auto;
+    padding-inline: 15px;
 }
 
 /* =========================
-   SECTION
+   SECTIONS
 ========================= */
+
 .section {
     padding: 60px 20px;
 }
 
-/* =========================
-   SECTION HEADER
-========================= */
 .section-header {
     position: relative;
+    display: inline-block;
     text-align: center;
 }
 
@@ -92,19 +103,27 @@ h1, h2, h3, h4 {
     transform: translateX(-50%);
 }
 
+.nav-link-active {
+    color: var(--gold);
+    font-weight: 700;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 0.25rem;
+}
+
 /* =========================
-   IMAGES (OPTIMIZED)
+   IMAGES
 ========================= */
+
 img {
+    display: block;
     max-width: 100%;
     height: auto;
-    display: block;
-    content-visibility: auto;
 }
 
 /* =========================
    HOVER EFFECTS
 ========================= */
+
 .gallery img {
     transition: transform 0.4s ease;
 }
@@ -114,107 +133,55 @@ img {
 }
 
 .card-hover {
-    transition: all 0.3s ease;
-    will-change: transform;
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .card-hover:hover {
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
     transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 /* =========================
    BUTTONS & LINKS
 ========================= */
-a, button {
-    transition: all 0.3s ease;
+
+a,
+button {
+    transition:
+        transform 0.3s ease,
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease;
 }
 
-a:hover, button:hover {
+a:hover,
+button:hover {
     transform: translateY(-2px);
 }
 
 /* =========================
-   HERO SECTION
+   HERO
 ========================= */
+
 .hero-bg h1 {
     font-size: 50px;
     line-height: 1.2;
 }
 
 /* =========================
-   MODAL
+   ANCHOR OFFSET
 ========================= */
-#booking-modal {
-    background: rgba(0, 0, 0, 0.65);
-    backdrop-filter: blur(10px);
-}
 
-#booking-modal .modal-panel {
-    max-width: 34rem;
-    width: 100%;
-    border: 1px solid rgba(212, 175, 119, 0.2);
-    margin: auto;
-}
-
-#booking-modal input,
-#booking-modal select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    outline: none;
-}
-
-#booking-modal input:focus,
-#booking-modal select:focus {
-    border-color: var(--gold);
-}
-
-#booking-modal button[type="submit"] {
-    width: 100%;
-}
-
-/* =========================
-   SCROLL OFFSET FIX
-========================= */
 [id] {
     scroll-margin-top: 6rem;
 }
 
 /* =========================
-   MOBILE RESPONSIVE
+   UTILITY CLASSES
 ========================= */
-@media (max-width: 768px) {
 
-    .hero-bg h1 {
-        font-size: 28px;
-        line-height: 1.3;
-        text-align: center;
-        padding: 0 10px;
-    }
-
-    .section {
-        padding: 40px 15px;
-    }
-
-    .section-header::after {
-        width: 60px;
-    }
-
-    .container {
-        padding: 0 10px;
-    }
-
-    body {
-        padding-bottom: 80px;
-        padding-top: 70px;
-    }
-}
-
-/* =========================
-   EXTRA STYLES
-========================= */
 .text-gold {
     color: var(--gold);
 }
@@ -223,9 +190,220 @@ a:hover, button:hover {
     background: var(--gold);
 }
 
+[class*="text-[#8b6b35]"],
+[class*="text-[#b89555]"] {
+    color: var(--gold) !important;
+}
+
+[class*="text-[#777777]"] {
+    color: #5f5f5f !important;
+}
+
+[href^="https://wa.me/"] {
+    width: 100%;
+    max-width: 22rem;
+    padding-block: 0.875rem;
+    background-color: #25d366 !important;
+}
+
+[href^="https://wa.me/"]:hover {
+    background-color: #20bd5a !important;
+}
+
+.whatsapp-cta {
+    width: 100%;
+    max-width: 22rem;
+    padding-block: 0.875rem;
+    background-color: #25d366 !important;
+    color: #fff !important;
+    border-radius: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-cta:hover {
+    background-color: #20bd5a !important;
+}
+
+.pricing-inquiry {
+    display: block;
+    color: #1a1a1a;
+    width: auto;
+    max-width: none;
+    padding-block: 0;
+    background-color: transparent !important;
+}
+
+.pricing-inquiry:hover {
+    background-color: transparent !important;
+    color: #1a1a1a !important;
+    text-decoration: underline;
+}
+
+.service-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+.service-nav-link::after {
+    content: '\2192';
+    margin-left: 1rem;
+}
+
+.service-action-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding: 1rem 1.25rem;
+    border: 1px solid rgb(212 175 119 / 0.2);
+    border-radius: 0.75rem;
+    background: var(--light);
+}
+
+.service-action-link::after {
+    content: '\2192';
+    margin-left: 1rem;
+}
+
+.service-action-link span {
+    display: none;
+}
+
+.service-action-link:hover {
+    background: var(--gold);
+}
+
+.help-service-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+footer a[aria-label*="Instagram"],
+footer a[aria-label*="Facebook"] {
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a[aria-label*="Instagram"] i,
+footer a[aria-label*="Facebook"] i {
+    font-size: 1.5rem;
+}
+
+.included-services-grid article > div:first-child,
+.related-services-grid article > div:first-child {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: var(--gold);
+}
+
+.included-services-grid article > div:first-child i,
+.related-services-grid article > div:first-child i {
+    color: #1a1a1a;
+    font-size: 1.5rem;
+}
+
+.related-services-grid > article {
+    display: flex;
+    flex-direction: column;
+}
+
+.related-services-grid > article > a {
+    margin-top: auto;
+}
+
+.redundant-process {
+    display: none;
+}
+
+.gallery-item {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 0.75rem;
+}
+
+.gallery-item::after {
+    content: 'View image';
+    position: absolute;
+    inset: auto 0 0;
+    padding: 0.5rem;
+    background: rgb(0 0 0 / 0.65);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.gallery-item:hover::after,
+.gallery-item:focus-visible::after {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gallery-item:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+.service-list-collapsed > article:nth-child(n + 7) {
+    display: none;
+}
+
+.service-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card > div:last-child {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.service-card > div:last-child > div:last-child {
+    margin-top: auto;
+}
+
+.trust-card-title {
+    min-height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seo-details summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.seo-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.seo-details summary i {
+    transition: transform 0.3s ease;
+}
+
+.seo-details[open] summary i {
+    transform: rotate(180deg);
+}
+
 /* =========================
    SCROLLBAR
 ========================= */
+
 ::-webkit-scrollbar {
     width: 6px;
 }
@@ -233,9 +411,12 @@ a:hover, button:hover {
 ::-webkit-scrollbar-thumb {
     background: var(--gold);
     border-radius: 10px;
-}/* =========================
-   MOBILE OPTIMIZATION
-========================= */
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
 @media (max-width: 768px) {
 
     html,
@@ -249,6 +430,7 @@ a:hover, button:hover {
     }
 
     /* Navbar */
+
     nav .heading-font {
         font-size: 1.35rem !important;
     }
@@ -258,6 +440,7 @@ a:hover, button:hover {
     }
 
     /* Hero */
+
     #home {
         min-height: 88svh;
         padding-top: 15px;
@@ -270,19 +453,21 @@ a:hover, button:hover {
     }
 
     #home p {
+        max-width: 100%;
+        margin-bottom: 18px;
         font-size: 14px !important;
         line-height: 1.6;
-        margin-bottom: 18px;
-        max-width: 100%;
     }
 
-    /* Badges */
+    /* Hero Badges */
+
     #home .inline-flex {
-        font-size: 10px;
         padding: 6px 12px;
+        font-size: 10px;
     }
 
-    /* Buttons */
+    /* Hero Buttons */
+
     #home a.book-appointment,
     #home a.call-now {
         width: 100%;
@@ -292,14 +477,16 @@ a:hover, button:hover {
         border-radius: 9999px;
     }
 
-    /* Bottom Text */
+    /* Hero Bottom Text */
+
     #home .mt-8 {
         margin-top: 20px;
-        font-size: 12px;
         gap: 8px;
+        font-size: 12px;
     }
 
     /* Sections */
+
     section {
         padding-left: 16px;
         padding-right: 16px;
@@ -315,13 +502,24 @@ a:hover, button:hover {
     }
 
     /* Cards */
+
     .card-hover {
         padding: 18px;
     }
 
     /* Images */
+
     img {
         max-width: 100%;
         height: auto;
     }
+    
+    /* SR Unisex Salon - Consistent Text Colour System */
+:root {
+    --text-primary: #1a1a1a;
+    --text-secondary: #5f5f5f;
+    --text-muted: #777777;
+    --brand-gold: #b89555;
+    --brand-gold-light: #d4af77;
+}
 }

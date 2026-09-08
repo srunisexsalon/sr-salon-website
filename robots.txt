@@ -1,4 +1,11 @@
+# =========================================================
+# SR UNISEX SALON GAYA - ROBOTS.TXT
+# Website: https://srunisexsalongaya.com/
+# =========================================================
+
+# Allow search engines to crawl the website
 User-agent: *
 Allow: /
 
-Sitemap: https://www.srunisexsalongaya.com/sitemap.xml
+# Sitemap location
+Sitemap: https://srunisexsalongaya.com/sitemap.xml
