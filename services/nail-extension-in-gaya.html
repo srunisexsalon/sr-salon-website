@@ -49,6 +49,15 @@
           content="SR Unisex Salon">
 
     <!-- =====================================================
+        Twitter Card meta tags
+    ====================================================== -->
+    <meta name="twitter:card"
+          content="summary_large_image">
+    <meta name="twitter:title" content="Nail Extension in Gaya | SR Unisex Salon">
+    <meta name="twitter:description" content="Explore gel and acrylic nail extension services in Gaya at SR Unisex Salon, with nail shapes, lengths and design options to suit your style.">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dnbmwltt6/image/upload/v1787657592/best-nail-extension-in-gaya_cwl3il.webp">
+
+    <!-- =====================================================
          FAVICON
     ====================================================== -->
 
@@ -142,27 +151,67 @@
 
 
     {
-      "@type": "Service",
+     "@type": "Service",
+     "@id": "https://www.srunisexsalongaya.com/services/nail-extension-in-gaya.html#service",
+     "name": "Nail Extension in Gaya",
+     "serviceType": "Nail Extension",
+     "description": "Professional nail extension services in Gaya with gel and acrylic options, different nail lengths, shapes, colours, French finishes and selected nail art based on the client's preference.",
+     "url": "https://www.srunisexsalongaya.com/services/nail-extension-in-gaya.html",
 
-      "@id": "https://www.srunisexsalongaya.com/services/nail-extension-in-gaya.html#service",
-
-      "name": "Nail Extension in Gaya",
-
-      "serviceType": "Nail Extension",
-
-      "description": "Professional nail extension services in Gaya with gel and acrylic options, different nail lengths, shapes, colours, French finishes and selected nail art based on the client's preference.",
-
-      "url": "https://www.srunisexsalongaya.com/services/nail-extension-in-gaya.html",
-
-      "provider": {
-        "@id": "https://www.srunisexsalongaya.com/#business"
-      },
-
-      "areaServed": {
-        "@type": "City",
-        "name": "Gaya"
-      }
+     "provider": {
+      "@id": "https://www.srunisexsalongaya.com/#business"
     },
+
+     "areaServed": {
+     "@type": "City",
+     "name": "Gaya"
+    },
+
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Gel Nail Extension",
+      "priceCurrency": "INR",
+      "price": "1799",
+      "url": "https://www.srunisexsalongaya.com/services/nail-extension-in-gaya.html"
+    },
+    {
+      "@type": "Offer",
+      "name": "Acrylic Nail Extension",
+      "priceCurrency": "INR",
+      "price": "3499",
+      "url": "https://www.srunisexsalongaya.com/services/nail-extension-in-gaya.html"
+    },
+    {
+      "@type": "Offer",
+      "name": "Cat Eye Nails",
+      "priceCurrency": "INR",
+      "price": "3999",
+      "url": "https://www.srunisexsalongaya.com/services/nail-extension-in-gaya.html"
+    },
+    {
+      "@type": "Offer",
+      "name": "French Nail Art",
+      "priceCurrency": "INR",
+      "price": "3999",
+      "url": "https://www.srunisexsalongaya.com/services/nail-extension-in-gaya.html"
+    },
+    {
+      "@type": "Offer",
+      "name": "Monochromatic Nails",
+      "priceCurrency": "INR",
+      "price": "2799",
+      "url": "https://www.srunisexsalongaya.com/services/nail-extension-in-gaya.html"
+    },
+    {
+      "@type": "Offer",
+      "name": "3D Nail Art",
+      "priceCurrency": "INR",
+      "price": "4999",
+      "url": "https://www.srunisexsalongaya.com/services/nail-extension-in-gaya.html"
+    }
+  ]
+}
 
 
     {
@@ -298,7 +347,7 @@
                    flex items-center justify-between">
 
             <a
-                href="../index.html"
+                href="/"
                 class="flex items-center gap-2 sm:gap-3 min-w-0"
                 aria-label="SR Unisex Salon - Home">
 
@@ -333,14 +382,14 @@
                 class="hidden md:flex items-center
                        gap-4 lg:gap-6 text-sm font-medium">
 
-                <a href="../index.html"
+                <a href="/"
                    class="hover:text-[#d4af77] transition">
                     Home
                 </a>
 
                 <a href="advanced-facial-in-gaya.html"
                    class="hover:text-[#d4af77] transition">
-                    Carbon Facial
+                    Advanced Facial
                 </a>
 
                 <a href="facial-in-gaya.html"
@@ -398,14 +447,14 @@
                 class="max-w-7xl mx-auto px-5 py-4
                        flex flex-col gap-1">
 
-                <a href="../index.html"
+                <a href="/"
                    class="mobile-menu-link py-3 px-3 rounded-lg hover:bg-[#f8f4ed]">
                     Home
                 </a>
 
                 <a href="advanced-facial-in-gaya.html"
                    class="mobile-menu-link py-3 px-3 rounded-lg hover:bg-[#f8f4ed]">
-                    Carbon Facial
+                    Advanced Facial
                 </a>
 
                 <a href="facial-in-gaya.html"
@@ -848,7 +897,7 @@
                 </p>
 
                 <a
-                    href="manicure-in-gaya.html"
+                    href="/services/manicure-in-gaya.html"
                     class="service-action-link inline-block font-semibold
                            text-[#1a1a1a] hover:text-[#d4af77]">
                     Explore Manicure
@@ -874,7 +923,7 @@
                 </p>
 
                 <a
-                    href="pedicure-in-gaya.html"
+                    href="/services/pedicure-in-gaya.html"
                     class="service-action-link inline-block font-semibold
                            text-[#1a1a1a] hover:text-[#d4af77]">
                     Explore Pedicure
@@ -900,7 +949,7 @@
                 </p>
 
                 <a
-                    href="d-tan-in-gaya.html"
+                    href="/services/d-tan-in-gaya.html"
                     class="service-action-link inline-block font-semibold
                            text-[#1a1a1a] hover:text-[#d4af77]">
                     Explore D-Tan
@@ -926,7 +975,7 @@
                 </p>
 
                 <a
-                    href="cleanup-in-gaya.html"
+                    href="/services/cleanup-in-gaya.html"
                     class="service-action-link inline-block font-semibold
                            text-[#1a1a1a] hover:text-[#d4af77]">
                     Explore Cleanup
@@ -1180,7 +1229,7 @@
                     class="pricing-inquiry
                            text-base font-semibold">
 
-                    Starting from ₹1,499
+                    Starting from ₹1,799
 
                 </p>
 
@@ -1217,7 +1266,7 @@
                     class="pricing-inquiry
                            text-base font-semibold">
 
-                    Starting from ₹1,499
+                    Starting from ₹3,499
 
                 </p>
 
@@ -1254,7 +1303,7 @@
                     class="pricing-inquiry
                            text-base font-semibold">
 
-                    Starting from ₹1,299
+                    Starting from ₹3,999
 
                 </p>
 
@@ -1291,7 +1340,7 @@
                     class="pricing-inquiry
                            text-base font-semibold">
 
-                    Starting from ₹999
+                    Starting from ₹3,999
 
                 </p>
 
@@ -1328,7 +1377,7 @@
                     class="pricing-inquiry
                            text-base font-semibold">
 
-                    Starting from ₹1,199
+                    Starting from ₹2,799
 
                 </p>
 
@@ -1365,7 +1414,7 @@
                     class="pricing-inquiry
                            text-base font-semibold">
 
-                    Starting from ₹1,999
+                    Starting from ₹4,999
 
                 </p>
 

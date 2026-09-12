@@ -49,6 +49,15 @@
     <meta property="og:site_name"
           content="SR Unisex Salon">
 
+    <!-- =====================================================
+        Twitter Card meta tags
+    ====================================================== -->  
+    
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Skin Care in Gaya | Professional Skin Care Services | SR Unisex Salon">
+    <meta name="twitter:description" content="Professional facial and cosmetic skin care services in Gaya at SR Unisex Salon">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1787657390/skin-care-in-gaya_np2glh.webp">
+
 
     <!-- =====================================================
          FAVICON
@@ -150,27 +159,84 @@
 
 
     {
-      "@type": "Service",
+     "@type": "Service",
 
-      "@id": "https://www.srunisexsalongaya.com/services/skin-care-in-gaya.html#service",
+     "@id": "https://www.srunisexsalongaya.com/services/skin-care-in-gaya.html#service",
 
-      "name": "Skin Care in Gaya",
+     "name": "Skin Care in Gaya",
 
-      "serviceType": "Skin Care",
+     "serviceType": "Professional Skin Care Services",
 
-      "description": "Professional cosmetic skin care services in Gaya including cleansing, exfoliation, hydration and facial care selected according to individual skin-care needs.",
+     "description": "Professional skin care services in Gaya including facial, cleansing, hydration, exfoliation and other salon-based skin care options selected according to skin type and individual preferences.",
 
-      "url": "https://www.srunisexsalongaya.com/services/skin-care-in-gaya.html",
+     "url": "https://www.srunisexsalongaya.com/services/skin-care-in-gaya.html",
 
-      "provider": {
-        "@id": "https://www.srunisexsalongaya.com/#business"
-      },
+     "provider": {
+      "@id": "https://www.srunisexsalongaya.com/#business"
+    },
 
       "areaServed": {
-        "@type": "City",
-        "name": "Gaya"
-      }
+      "@type": "City",
+      "name": "Gaya"
     },
+
+     "hasOfferCatalog": {
+     "@type": "OfferCatalog",
+     "name": "Skin Care Services",
+
+    "itemListElement": [
+
+      {
+        "@type": "Offer",
+
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Basic Facial"
+        },
+
+        "price": "1499",
+        "priceCurrency": "INR"
+      },
+
+      {
+        "@type": "Offer",
+
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Advanced Facial"
+        },
+
+        "price": "2499",
+        "priceCurrency": "INR"
+      },
+
+      {
+        "@type": "Offer",
+
+        "itemOffered": {
+          "@type": "Service",
+          "name": "HydraFacial"
+        },
+
+        "price": "3999",
+        "priceCurrency": "INR"
+      },
+
+      {
+        "@type": "Offer",
+
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Bridal Facial"
+        },
+
+        "price": "4999",
+        "priceCurrency": "INR"
+      }
+
+    ]
+  }
+}
 
 
     {
@@ -242,7 +308,7 @@
           "acceptedAnswer": {
             "@type": "Answer",
 
-            "text": "Yes. Use the appointment form on this page to share your name, preferred service, date and time. The form prepares a WhatsApp message so the salon can confirm availability and current pricing."
+            "text": "Yes. You can contact SR Unisex Salon on WhatsApp to ask about available skin-care services, current pricing and appointment availability"
           }
         }
 
@@ -311,7 +377,7 @@
             <!-- LOGO -->
 
             <a
-                href="../index.html"
+                href="/"
                 class="flex items-center gap-2 sm:gap-3 min-w-0"
                 aria-label="SR Unisex Salon - Home">
 
@@ -359,7 +425,7 @@
                        text-sm font-medium">
 
                 <a
-                    href="../index.html"
+                    href="/"
                     class="hover:text-[#d4af77] transition">
                     Home
                 </a>
@@ -367,13 +433,13 @@
                 <a
                     href="skin-treatment-in-gaya.html"
                     class="hover:text-[#d4af77] transition">
-                    Pigmentation Treatments
+                    Skin Treatments
                 </a>
 
                 <a
                     href="facial-in-gaya.html"
                     class="hover:text-[#d4af77] transition">
-                    Bridal Facial
+                    Facial 
                 </a>
 
                 <a
@@ -444,7 +510,7 @@
                        flex flex-col gap-1">
 
                 <a
-                    href="../index.html"
+                    href="/"
                     class="mobile-menu-link py-3 px-3 rounded-lg
                            hover:bg-[#f8f4ed]">
                     Home
@@ -454,11 +520,11 @@
                     href="skin-treatment-in-gaya.html"
                     class="mobile-menu-link py-3 px-3 rounded-lg
                            hover:bg-[#f8f4ed]">
-                    Pigmentation Treatments
+                    Skin Treatments
                 </a>
 
                 <a
-                    href="Facial-in-gaya.html"
+                    href="facial-in-gaya.html"
                     class="mobile-menu-link py-3 px-3 rounded-lg
                            hover:bg-[#f8f4ed]">
                     Bridal Facial
@@ -592,7 +658,7 @@
                         aria-hidden="true">
                     </i>
 
-                    WhatsApp for Appointment
+                    Ask About Skin Care
 
                 </a>
 
@@ -1119,7 +1185,7 @@
                 </p>
 
                 <a
-                    href="acne-treatment-in-gaya.html"
+                    href="/services/acne-treatment-in-gaya.html"
                     class="service-action-link
                            inline-block
                            font-semibold
@@ -1145,7 +1211,7 @@
                     class="text-base sm:text-lg
                            font-semibold mb-2">
 
-                    Carbon Facial
+                    Advanced Facial
 
                 </h3>
 
@@ -1160,7 +1226,7 @@
                 </p>
 
                 <a
-                    href="advanced-facial-in-gaya.html"
+                    href="/services/advanced-facial-in-gaya.html"
                     class="service-action-link
                            inline-block
                            font-semibold
@@ -1201,7 +1267,7 @@
                 </p>
 
                 <a
-                    href="d-tan-in-gaya.html"
+                    href="/services/d-tan-in-gaya.html"
                     class="service-action-link
                            inline-block
                            font-semibold
@@ -1242,7 +1308,7 @@
                 </p>
 
                 <a
-                    href="cleanup-in-gaya.html"
+                    href="/services/cleanup-in-gaya.html"
                     class="service-action-link
                            inline-block
                            font-semibold
@@ -1592,7 +1658,7 @@
             class="mt-10 text-center">
 
             <a
-                href="https://wa.me/919430001237?text=Hi%20SR%20Unisex%20Salon%2C%20please%20share%20the%20current%20price%20for%20facial."
+                href="https://wa.me/919430001237?text=Hi%20SR%20Unisex%20Salon%2C%20please%20share%20the%20current%20price%20for%20skin%20care%20services."
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Ask SR Unisex Salon for facial pricing on WhatsApp"
@@ -1611,7 +1677,7 @@
                     aria-hidden="true">
                 </i>
 
-                WhatsApp for Appointment
+                Ask About Skin Care
 
             </a>
 
@@ -1747,7 +1813,7 @@
                     <!-- 1. MANICURE -->
 
                     <a
-                        href="manicure-in-gaya.html"
+                        href="/services/manicure-in-gaya.html"
                         class="service-nav-link rounded-xl
                                border border-[#d4af77]/20
                                bg-[#f8f4ed]
@@ -1764,7 +1830,7 @@
                     <!-- 2. HAIR CUT -->
 
                     <a
-                        href="hair-cut-in-gaya.html"
+                        href="/services/hair-cut-in-gaya.html"
                         class="service-nav-link rounded-xl
                                border border-[#d4af77]/20
                                bg-[#f8f4ed]
@@ -1781,7 +1847,7 @@
                     <!-- 3. LASER HAIR REMOVAL -->
 
                     <a
-                        href="laser-hair-removal-in-gaya.html"
+                        href="/services/laser-hair-removal-in-gaya.html"
                         class="service-nav-link rounded-xl
                                border border-[#d4af77]/20
                                bg-[#f8f4ed]
@@ -1798,7 +1864,7 @@
                     <!-- 4. NAIL EXTENSION -->
 
                     <a
-                        href="nail-extension-in-gaya.html"
+                        href="/services/nail-extension-in-gaya.html"
                         class="service-nav-link rounded-xl
                                border border-[#d4af77]/20
                                bg-[#f8f4ed]
@@ -1815,7 +1881,7 @@
                     <!-- 5. HAIR STRAIGHTENING -->
 
                     <a
-                        href="hair-straightening-in-gaya.html"
+                        href="/services/hair-straightening-in-gaya.html"
                         class="service-nav-link rounded-xl
                                border border-[#d4af77]/20
                                bg-[#f8f4ed]
@@ -1832,7 +1898,7 @@
                     <!-- 6. PERMANENT MAKEUP -->
 
                     <a
-                        href="permanent-makeup-in-gaya.html"
+                        href="/services/permanent-makeup-in-gaya.html"
                         class="service-nav-link rounded-xl
                                border border-[#d4af77]/20
                                bg-[#f8f4ed]
@@ -1906,7 +1972,7 @@
                             aria-hidden="true">
                         </i>
 
-                        WhatsApp for Appointment
+                        Ask About Skin Care
 
                     </a>
 
@@ -2162,10 +2228,8 @@
                            text-gray-600
                            leading-7">
 
-                    Yes. Use the appointment form on this page to share
-                    your name, preferred service, date and time. The form
-                    prepares a WhatsApp message so the salon can confirm
-                    availability and current pricing.
+                    Yes. You can contact SR Unisex Salon on WhatsApp to ask about available 
+                    skin-care services, current pricing and appointment availability
 
                 </p>
 
@@ -2209,7 +2273,7 @@
                            mt-3
                            text-[#1a1a1a]">
 
-                    Professional Skin Care in Gaya for Everyday Beauty & Grooming
+                    Professional Skin Care in Gaya for Healthy-Looking Skin
 
                 </h2>
 
@@ -2239,26 +2303,26 @@
 
                 <p>
 
-                    Good skin care does not always have to be complicated.
-                    Sometimes, the simplest approach is to give your skin
-                    some regular attention with cleansing, exfoliation,
-                    hydration and suitable finishing care. At SR Unisex
-                    Salon, our skin-care services in Gaya are designed
-                    around cosmetic grooming and a comfortable salon
-                    experience.
+                    Taking care of your skin does not always mean following
+                    a complicated routine. Regular cleansing, gentle
+                    exfoliation and proper hydration can make your skin
+                    feel cleaner, fresher and more comfortable. At
+                    <strong>SR Unisex Salon</strong>, we offer professional
+                    skin-care and facial services in Gaya for clients who
+                    want simple, comfortable and well-maintained grooming.
 
                 </p>
 
 
                 <p>
 
-                    Everyone's skin can have different needs. Some people
-                    notice that their skin looks oily during the day,
-                    while others may feel dryness or a lack of freshness.
-                    Your routine, weather, lifestyle and everyday exposure
-                    can also influence how your skin looks. That is why it
-                    can be useful to discuss your preference before
-                    selecting a salon treatment.
+                    Skin can look and feel different from person to person.
+                    Some people deal with excess oil, while others notice
+                    dryness, dullness or rough-looking texture. Weather,
+                    dust, pollution, makeup and everyday lifestyle can also
+                    affect the way your skin looks. This is why choosing a
+                    treatment based on your skin's current needs can be more
+                    useful than following the same facial routine every time.
 
                 </p>
 
@@ -2277,26 +2341,29 @@
 
                 <p>
 
-                    SR Unisex Salon provides different facial and
-                    cosmetic skin-care options in Gaya. Depending on the
-                    service, the session may include cleansing,
-                    exfoliation, hydration, massage and finishing care.
-                    Basic facial services can be useful for routine
-                    grooming, while advanced options can offer a more
-                    detailed salon experience.
+                    Our skin-care services in Gaya include different facial
+                    and grooming options for regular skin maintenance and
+                    special occasions. Depending on the treatment, a session
+                    may include cleansing, exfoliation, hydration, massage
+                    and finishing care.
+
+                    A basic facial can be a good choice when you simply want
+                    your skin to feel clean and refreshed. For clients who
+                    prefer a more detailed treatment, advanced facial and
+                    hydration-focused options are also available.
 
                 </p>
 
 
                 <p>
 
-                    If you are looking for a more focused cleansing,
-                    exfoliation and hydration session, you can ask about
-                    HydraFacial. Clients preparing for an important
-                    occasion may also prefer a bridal facial or another
-                    suitable pre-event skin-care service. The exact
-                    inclusions, products and duration can vary, so checking
-                    the current salon menu is recommended.
+                    If your skin feels tired or looks dull after a busy
+                    routine, you can ask our team about suitable facial and
+                    skin-care options. HydraFacial can be considered when
+                    you are looking for a more intensive cleansing and
+                    hydration-focused salon treatment. For weddings,
+                    celebrations and other special occasions, clients can
+                    also ask about bridal and pre-event facial services.
 
                 </p>
 
@@ -2315,23 +2382,23 @@
 
                 <p>
 
-                    Skin care is part of personal grooming for both men
-                    and women. Some clients book a facial because they
-                    want their skin to feel clean and refreshed, while
-                    others include professional skin care in their
-                    routine before weddings, parties, celebrations or
-                    other occasions.
+                    Professional skin care is not limited to any particular
+                    age or gender. Both men and women visit SR Unisex Salon
+                    for facial and grooming services. Some clients prefer
+                    regular skin maintenance, while others book a facial
+                    before a wedding, party, festival or an important
+                    occasion.
 
                 </p>
 
 
                 <p>
 
-                    At a unisex salon, you can discuss the type of
-                    finish you prefer and the level of care you want.
-                    If you are unsure about which option is suitable,
-                    our team can explain the available services and
-                    their current inclusions before you decide.
+                    Because SR Unisex Salon is a unisex salon in Gaya, you
+                    can simply discuss what you are looking for before
+                    choosing a service. Our team can explain the available
+                    options, what the service includes and which treatment
+                    may be more suitable for your preference.
 
                 </p>
 
@@ -2343,31 +2410,31 @@
                            text-[#1a1a1a]
                            pt-4">
 
-                    Choosing Skin Care According to Your Skin
+                    Choosing the Right Skin Care for Your Needs
 
                 </h3>
 
 
                 <p>
 
-                    A service should be selected according to what you
-                    actually want from the appointment. If your skin
-                    mainly needs routine cleansing, a basic facial may
-                    be enough. If you prefer additional exfoliation or
-                    hydration-focused care, a more detailed facial may
-                    be worth considering.
+                    There is no single facial that is perfect for everyone.
+                    The right choice depends on how your skin feels and what
+                    you want from the appointment. If you mainly want basic
+                    cleansing and freshness, a regular facial may be enough.
+                    If you are looking for more exfoliation or hydration,
+                    you can discuss advanced facial options with our team.
 
                 </p>
 
 
                 <p>
 
-                    For oily-looking skin, clients may ask about
-                    cleansing and oil-control focused cosmetic care. For
-                    dry-looking skin, hydration-focused options may be
-                    preferred. If your goal is simply a fresh and
-                    polished appearance, a regular facial can be a
-                    straightforward choice.
+                    For oily-looking skin, many clients prefer treatments
+                    that focus on cleansing and a fresh, balanced finish.
+                    Dry-looking skin may feel more comfortable with
+                    hydration-focused care. If your main goal is to look
+                    fresh and well-groomed before an event, a suitable facial
+                    can also become part of your pre-event grooming routine.
 
                 </p>
 
@@ -2386,24 +2453,24 @@
 
                 <p>
 
-                    The price of skin care in Gaya can depend on the
-                    treatment, products, service duration and package
-                    selected. Because salon menus and offers can change,
-                    it is better to confirm the current price before
-                    booking. You can use the appointment form on this
-                    page to ask about current availability and pricing.
+                    The cost of skin care in Gaya depends on the type of
+                    facial or treatment you choose, the products used and
+                    the duration of the service. At SR Unisex Salon, the
+                    available services and offers may change from time to
+                    time, so it is always a good idea to confirm the latest
+                    price before booking your appointment.
 
                 </p>
 
 
                 <p>
 
-                    When comparing skin-care services, look at what is
-                    included rather than comparing only the starting
-                    price. Understanding whether cleansing, exfoliation,
-                    hydration, massage or finishing care is part of the
-                    service makes it easier to choose the option that
-                    matches your needs.
+                    When choosing a skin-care service, price is only one
+                    part of the decision. It is also worth checking what is
+                    included in the treatment, such as cleansing,
+                    exfoliation, hydration, massage and finishing care. This
+                    helps you choose a service that actually matches what
+                    you want from your salon visit.
 
                 </p>
 
@@ -2422,13 +2489,16 @@
 
                 <p>
 
-                    Salon skin care is intended for cosmetic grooming
-                    and appearance. It is not a substitute for medical
-                    treatment. If you have persistent acne, severe
-                    irritation, an infection, an unexplained rash or
-                    another ongoing skin concern, consider consulting a
-                    qualified healthcare professional before choosing a
-                    cosmetic salon treatment.
+                    The skin-care services offered at a salon are intended
+                    for cosmetic grooming and improving the overall
+                    appearance and feel of the skin. They are not a
+                    replacement for medical treatment.
+
+                    If you have persistent acne, severe irritation,
+                    infection, an unexplained rash or another ongoing skin
+                    concern, it is better to speak with a qualified
+                    healthcare professional before choosing a cosmetic
+                    salon treatment.
 
                 </p>
 
@@ -2447,11 +2517,12 @@
 
                 <p>
 
-                    If you are searching for skin care in Gaya, SR Unisex
-                    Salon offers facial and cosmetic skin-care services
-                    for clients who want a clean, comfortable grooming
-                    experience. You can discuss your preferred treatment,
-                    skin type and desired finish before the service starts.
+                    If you are looking for professional skin care in Gaya,
+                    SR Unisex Salon offers facial and cosmetic grooming
+                    services in a comfortable unisex salon environment.
+                    Before your service begins, you can discuss your skin
+                    type, the finish you prefer and the kind of result you
+                    are looking for.
 
                 </p>
 
@@ -2459,11 +2530,12 @@
                 <p>
 
                     SR Unisex Salon is located on Katari Hill Road, near
-                    Mirza Ghalib College, White House Compound, Judges
-                    Colony, Gaya. Use the booking form to share your
-                    preferred date, time and service. Your appointment
-                    request will open WhatsApp so the salon can confirm
-                    the details with you.
+                    Mirza Ghalib College, in White House Compound, Judges
+                    Colony, Gaya. To ask about a suitable skin-care service,
+                    current pricing or appointment availability, you can
+                    contact the salon directly on WhatsApp. Our team can
+                    help you with the available services and confirm the
+                    appointment details.
 
                 </p>
 
@@ -2474,358 +2546,6 @@
     </div>
 
 </section>
-
-
-<!-- =====================================================
-     SKIN CARE BOOKING MODAL
-     UNIQUE PAGE-LEVEL BOOKING FLOW
-====================================================== -->
-
-<div
-    id="booking-modal"
-    class="fixed inset-0 z-[100]
-           hidden items-center justify-center
-           bg-black/50 px-4 py-6"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="booking-modal-title">
-
-    <div
-        class="relative w-full max-w-lg
-               max-h-[90vh] overflow-y-auto
-               rounded-2xl bg-white
-               shadow-2xl">
-
-        <!-- CLOSE -->
-
-        <button
-            type="button"
-            data-booking-close
-            class="absolute right-4 top-4
-                   w-10 h-10 rounded-full
-                   bg-[#f8f4ed]
-                   text-[#1a1a1a]
-                   hover:bg-[#d4af77]
-                   transition"
-            aria-label="Close appointment form">
-
-            <i
-                class="fa-solid fa-xmark"
-                aria-hidden="true">
-            </i>
-
-        </button>
-
-
-        <div class="p-6 sm:p-8">
-
-            <span
-                class="text-[#d4af77]
-                       text-xs sm:text-sm
-                       font-semibold tracking-widest">
-
-                APPOINTMENT REQUEST
-
-            </span>
-
-
-            <h2
-                id="booking-modal-title"
-                class="text-2xl sm:text-3xl
-                       font-semibold
-                       mt-3 mb-2">
-
-                Book Skin Care
-
-            </h2>
-
-
-            <p
-                class="text-sm text-gray-600
-                       leading-6 mb-6">
-
-                Share your preferred skin-care service, date and time.
-                Your details will be prepared in WhatsApp for
-                confirmation.
-
-            </p>
-
-
-            <form
-                id="skin-care-booking-form"
-                class="space-y-4">
-
-                <div>
-
-                    <label
-                        for="booking-name"
-                        class="block text-sm font-semibold mb-2">
-
-                        Your Name
-
-                    </label>
-
-                    <input
-                        id="booking-name"
-                        name="name"
-                        type="text"
-                        required
-                        autocomplete="name"
-                        placeholder="Enter your name"
-                        class="w-full rounded-xl
-                               border border-gray-200
-                               px-4 py-3
-                               outline-none
-                               focus:border-[#d4af77]">
-
-                </div>
-
-
-                <div>
-
-                    <label
-                        for="booking-phone"
-                        class="block text-sm font-semibold mb-2">
-
-                        Mobile Number
-
-                    </label>
-
-                    <input
-                        id="booking-phone"
-                        name="phone"
-                        type="tel"
-                        required
-                        inputmode="numeric"
-                        autocomplete="tel"
-                        placeholder="Enter mobile number"
-                        class="w-full rounded-xl
-                               border border-gray-200
-                               px-4 py-3
-                               outline-none
-                               focus:border-[#d4af77]">
-
-                </div>
-
-
-                <div>
-
-                    <label
-                        for="booking-service"
-                        class="block text-sm font-semibold mb-2">
-
-                        Skin Care Service
-
-                    </label>
-
-                    <select
-                        id="booking-service"
-                        name="service"
-                        required
-                        class="w-full rounded-xl
-                               border border-gray-200
-                               px-4 py-3
-                               outline-none
-                               focus:border-[#d4af77]">
-
-                        <option value="">
-                            Select a service
-                        </option>
-
-                        <option value="Basic Facial">
-                            Basic Facial
-                        </option>
-
-                        <option value="Advanced Facial">
-                            Advanced Facial
-                        </option>
-
-                        <option value="HydraFacial">
-                            HydraFacial
-                        </option>
-
-                        <option value="Bridal Facial">
-                            Bridal Facial
-                        </option>
-
-                        <option value="Acne Skin Care">
-                            Acne Skin Care
-                        </option>
-
-                        <option value="Chemical Peel">
-                            Chemical Peel
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div>
-
-                    <label
-                        for="booking-skin-type"
-                        class="block text-sm font-semibold mb-2">
-
-                        Skin Type
-
-                        <span class="font-normal text-gray-400">
-                            (Optional)
-                        </span>
-
-                    </label>
-
-                    <select
-                        id="booking-skin-type"
-                        name="skin_type"
-                        class="w-full rounded-xl
-                               border border-gray-200
-                               px-4 py-3
-                               outline-none
-                               focus:border-[#d4af77]">
-
-                        <option value="">
-                            Select if you know it
-                        </option>
-
-                        <option value="Normal">
-                            Normal
-                        </option>
-
-                        <option value="Dry">
-                            Dry
-                        </option>
-
-                        <option value="Oily">
-                            Oily
-                        </option>
-
-                        <option value="Combination">
-                            Combination
-                        </option>
-
-                        <option value="Sensitive">
-                            Sensitive
-                        </option>
-
-                        <option value="Not sure">
-                            Not sure
-                        </option>
-
-                    </select>
-
-                </div>
-
-
-                <div
-                    class="grid gap-4 sm:grid-cols-2">
-
-                    <div>
-
-                        <label
-                            for="booking-date"
-                            class="block text-sm font-semibold mb-2">
-
-                            Preferred Date
-
-                        </label>
-
-                        <input
-                            id="booking-date"
-                            name="date"
-                            type="date"
-                            required
-                            class="w-full rounded-xl
-                                   border border-gray-200
-                                   px-4 py-3
-                                   outline-none
-                                   focus:border-[#d4af77]">
-
-                    </div>
-
-
-                    <div>
-
-                        <label
-                            for="booking-time"
-                            class="block text-sm font-semibold mb-2">
-
-                            Preferred Time
-
-                        </label>
-
-                        <input
-                            id="booking-time"
-                            name="time"
-                            type="time"
-                            required
-                            class="w-full rounded-xl
-                                   border border-gray-200
-                                   px-4 py-3
-                                   outline-none
-                                   focus:border-[#d4af77]">
-
-                    </div>
-
-                </div>
-
-
-                <div>
-
-                    <label
-                        for="booking-note"
-                        class="block text-sm font-semibold mb-2">
-
-                        Additional Note
-                        <span class="font-normal text-gray-400">
-                            (Optional)
-                        </span>
-
-                    </label>
-
-                    <textarea
-                        id="booking-note"
-                        name="note"
-                        rows="3"
-                        placeholder="Tell us about your skin-care preference"
-                        class="w-full rounded-xl
-                               border border-gray-200
-                               px-4 py-3
-                               outline-none
-                               focus:border-[#d4af77]"></textarea>
-
-                </div>
-
-
-                <button
-                    type="submit"
-                    class="w-full inline-flex
-                           items-center justify-center
-                           gap-3
-                           bg-[#d4af77]
-                           text-[#1a1a1a]
-                           px-6 py-4
-                           rounded-xl
-                           font-semibold
-                           hover:bg-[#b89157]
-                           transition">
-
-                    <i
-                        class="fa-brands fa-whatsapp text-lg"
-                        aria-hidden="true">
-                    </i>
-
-                    Continue on WhatsApp
-
-                </button>
-
-            </form>
-
-        </div>
-
-    </div>
-
-</div>
 
 
 <!-- =====================================================
@@ -2861,7 +2581,7 @@
             class="text-[#d4af77]
                    text-sm mb-3">
 
-            Best skin care in gaya
+            Professional Skin Care in Gaya
             <span aria-hidden="true">•</span>
             Premium Salon Services
 
@@ -3133,218 +2853,6 @@
 <script
     src="../js/script.js"
     defer>
-</script>
-
-
-<!-- =====================================================
-     PAGE-LEVEL JAVASCRIPT
-     SKIN CARE BOOKING -> WHATSAPP
-====================================================== -->
-
-<script>
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const modal =
-        document.getElementById("booking-modal");
-
-    const openButtons =
-        document.querySelectorAll("[data-booking-open]");
-
-    const closeButtons =
-        document.querySelectorAll("[data-booking-close]");
-
-    const form =
-        document.getElementById("skin-care-booking-form");
-
-    const dateInput =
-        document.getElementById("booking-date");
-
-
-    function openBookingModal() {
-
-        modal.classList.remove("hidden");
-        modal.classList.add("flex");
-
-        document.body.classList.add("overflow-hidden");
-
-        const firstInput =
-            document.getElementById("booking-name");
-
-        if (firstInput) {
-
-            setTimeout(function () {
-
-                firstInput.focus();
-
-            }, 100);
-
-        }
-
-    }
-
-
-    function closeBookingModal() {
-
-        modal.classList.add("hidden");
-        modal.classList.remove("flex");
-
-        document.body.classList.remove("overflow-hidden");
-
-    }
-
-
-    openButtons.forEach(function (button) {
-
-        button.addEventListener(
-            "click",
-            openBookingModal
-        );
-
-    });
-
-
-    closeButtons.forEach(function (button) {
-
-        button.addEventListener(
-            "click",
-            closeBookingModal
-        );
-
-    });
-
-
-    modal.addEventListener("click", function (event) {
-
-        if (event.target === modal) {
-
-            closeBookingModal();
-
-        }
-
-    });
-
-
-    document.addEventListener("keydown", function (event) {
-
-        if (
-            event.key === "Escape" &&
-            !modal.classList.contains("hidden")
-        ) {
-
-            closeBookingModal();
-
-        }
-
-    });
-
-
-    /* Prevent past appointment dates */
-
-    if (dateInput) {
-
-        const today = new Date();
-
-        const year =
-            today.getFullYear();
-
-        const month =
-            String(today.getMonth() + 1)
-                .padStart(2, "0");
-
-        const day =
-            String(today.getDate())
-                .padStart(2, "0");
-
-        dateInput.min =
-            `${year}-${month}-${day}`;
-
-    }
-
-
-    /* WhatsApp booking */
-
-    form.addEventListener(
-        "submit",
-        function (event) {
-
-            event.preventDefault();
-
-
-            const name =
-                document.getElementById(
-                    "booking-name"
-                ).value.trim();
-
-
-            const phone =
-                document.getElementById(
-                    "booking-phone"
-                ).value.trim();
-
-
-            const service =
-                document.getElementById(
-                    "booking-service"
-                ).value;
-
-
-            const skinType =
-                document.getElementById(
-                    "booking-skin-type"
-                ).value;
-
-
-            const date =
-                document.getElementById(
-                    "booking-date"
-                ).value;
-
-
-            const time =
-                document.getElementById(
-                    "booking-time"
-                ).value;
-
-
-            const note =
-                document.getElementById(
-                    "booking-note"
-                ).value.trim();
-
-
-            const message =
-`Hi SR Unisex Salon,
-
-I would like to book a skin-care appointment.
-
-Name: ${name}
-Mobile: ${phone}
-Service: ${service}
-Skin Type: ${skinType || "Not specified"}
-Preferred Date: ${date}
-Preferred Time: ${time}
-${note ? `Note: ${note}` : ""}
-
-Please confirm availability and current pricing. Thank you.`;
-
-
-            const whatsappURL =
-                "https://wa.me/919430001237?text=" +
-                encodeURIComponent(message);
-
-
-            window.open(
-                whatsappURL,
-                "_blank",
-                "noopener,noreferrer"
-            );
-
-        }
-    );
-
-});
-
 </script>
 
 

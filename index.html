@@ -20,6 +20,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://res.cloudinary.com">
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.srunisexsalongaya.com/">
@@ -32,12 +33,23 @@
     <meta property="og:title" content="SR Unisex Salon | Best Unisex Salon & Beauty Parlour in Gaya, Bihar">
     <meta property="og:description" content="Premium hair, skin, makeup & bridal services at the best unisex salon in Gaya. Expert stylists, hygienic environment, affordable luxury.">
     <meta property="og:image" content="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp">
+    <meta property="og:image:width" content="1200">   
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://www.srunisexsalongaya.com/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="en_IN">
 
-    <!-- Schema Markup for LocalBusiness -->
-  <script type="application/ld+json">
+    <!-- Twitter Card meta tags -->
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SR Unisex Salon | Best Unisex Salon & Beauty Parlour in Gaya, Bihar">
+    <meta name="twitter:description" content="Premium hair, skin, makeup & bridal services at the best unisex salon in Gaya. Expert stylists, hygienic environment, affordable luxury.">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp">
+
+    <!-- =========================================================
+     1. ORGANIZATION / LOCAL BUSINESS SCHEMA
+========================================================= -->
+<script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BeautySalon",
@@ -62,10 +74,20 @@
     "longitude": 84.992403
   },
 
-  "openingHours": "Mo-Su 09:00-21:00",
-    "priceRange": "&#8377;&#8377;",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday", "Tuesday", "Wednesday", "Thursday",
+      "Friday", "Saturday", "Sunday"
+    ],
+    "opens": "09:00",
+    "closes": "21:00"
+  },
+
+  "priceRange": "₹₹",
 
   "image": "https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp",
+  "logo": "https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp",
 
   "areaServed": {
     "@type": "City",
@@ -75,52 +97,123 @@
   "hasMap": "https://maps.app.goo.gl/tBxQoyWqVcmJtcKj7?g_st=awb",
 
   "sameAs": [
-     "https://www.instagram.com/sr_unisexsalon",
+    "https://www.instagram.com/sr_unisexsalon",
     "https://www.facebook.com/salonsrunisex",
     "https://g.page/r/CS_IlA6mHNu6EBM/review"
   ],
 
-  "makesOffer": [
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Salon Services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hair Cut in Gaya", "url": "https://www.srunisexsalongaya.com/services/hair-cut-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hair Spa in Gaya", "url": "https://www.srunisexsalongaya.com/services/hair-spa-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hair Colour in Gaya", "url": "https://www.srunisexsalongaya.com/services/hair-colour-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hair Styling in Gaya", "url": "https://www.srunisexsalongaya.com/services/hair-styling-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hair Straightening in Gaya", "url": "https://www.srunisexsalongaya.com/services/hair-straightening-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Hair Botox in Gaya", "url": "https://www.srunisexsalongaya.com/services/hair-botox-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Keratin Treatment in Gaya", "url": "https://www.srunisexsalongaya.com/services/keratin-treatment-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nanoplastia Treatment in Gaya", "url": "https://www.srunisexsalongaya.com/services/nanoplastia-treatment-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Facial in Gaya", "url": "https://www.srunisexsalongaya.com/services/facial-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Advanced Facial in Gaya", "url": "https://www.srunisexsalongaya.com/services/advanced-facial-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Cleanup in Gaya", "url": "https://www.srunisexsalongaya.com/services/cleanup-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "D-Tan in Gaya", "url": "https://www.srunisexsalongaya.com/services/d-tan-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Acne Treatment in Gaya", "url": "https://www.srunisexsalongaya.com/services/acne-treatment-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Skin Care in Gaya", "url": "https://www.srunisexsalongaya.com/services/skin-care-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Skin Treatment in Gaya", "url": "https://www.srunisexsalongaya.com/services/skin-treatment-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Bridal Makeup in Gaya", "url": "https://www.srunisexsalongaya.com/services/bridal-makeup-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Permanent Makeup in Gaya", "url": "https://www.srunisexsalongaya.com/services/permanent-makeup-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Manicure in Gaya", "url": "https://www.srunisexsalongaya.com/services/manicure-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pedicure in Gaya", "url": "https://www.srunisexsalongaya.com/services/pedicure-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Nail Extension in Gaya", "url": "https://www.srunisexsalongaya.com/services/nail-extension-in-gaya.html" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Laser Hair Removal in Gaya", "url": "https://www.srunisexsalongaya.com/services/laser-hair-removal-in-gaya.html" } }
+    ]
+  }
+}
+</script>
+
+<!-- =========================================================
+     2. SERVICE SCHEMA (ItemList of all services for the homepage)
+========================================================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Salon Services offered by SR Unisex Salon in Gaya",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1,  "item": { "@type": "Service", "name": "Hair Cut in Gaya", "url": "https://www.srunisexsalongaya.com/services/hair-cut-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 2,  "item": { "@type": "Service", "name": "Hair Spa in Gaya", "url": "https://www.srunisexsalongaya.com/services/hair-spa-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 3,  "item": { "@type": "Service", "name": "Hair Colour in Gaya", "url": "https://www.srunisexsalongaya.com/services/hair-colour-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 4,  "item": { "@type": "Service", "name": "Hair Styling in Gaya", "url": "https://www.srunisexsalongaya.com/services/hair-styling-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 5,  "item": { "@type": "Service", "name": "Hair Straightening in Gaya", "url": "https://www.srunisexsalongaya.com/services/hair-straightening-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 6,  "item": { "@type": "Service", "name": "Hair Botox in Gaya", "url": "https://www.srunisexsalongaya.com/services/hair-botox-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 7,  "item": { "@type": "Service", "name": "Keratin Treatment in Gaya", "url": "https://www.srunisexsalongaya.com/services/keratin-treatment-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 8,  "item": { "@type": "Service", "name": "Nanoplastia Treatment in Gaya", "url": "https://www.srunisexsalongaya.com/services/nanoplastia-treatment-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 9,  "item": { "@type": "Service", "name": "Facial in Gaya", "url": "https://www.srunisexsalongaya.com/services/facial-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 10, "item": { "@type": "Service", "name": "Advanced Facial in Gaya", "url": "https://www.srunisexsalongaya.com/services/advanced-facial-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 11, "item": { "@type": "Service", "name": "Cleanup in Gaya", "url": "https://www.srunisexsalongaya.com/services/cleanup-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 12, "item": { "@type": "Service", "name": "D-Tan in Gaya", "url": "https://www.srunisexsalongaya.com/services/d-tan-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 13, "item": { "@type": "Service", "name": "Acne Treatment in Gaya", "url": "https://www.srunisexsalongaya.com/services/acne-treatment-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 14, "item": { "@type": "Service", "name": "Skin Care in Gaya", "url": "https://www.srunisexsalongaya.com/services/skin-care-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 15, "item": { "@type": "Service", "name": "Skin Treatment in Gaya", "url": "https://www.srunisexsalongaya.com/services/skin-treatment-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 16, "item": { "@type": "Service", "name": "Bridal Makeup in Gaya", "url": "https://www.srunisexsalongaya.com/services/bridal-makeup-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 17, "item": { "@type": "Service", "name": "Permanent Makeup in Gaya", "url": "https://www.srunisexsalongaya.com/services/permanent-makeup-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 18, "item": { "@type": "Service", "name": "Manicure in Gaya", "url": "https://www.srunisexsalongaya.com/services/manicure-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 19, "item": { "@type": "Service", "name": "Pedicure in Gaya", "url": "https://www.srunisexsalongaya.com/services/pedicure-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 20, "item": { "@type": "Service", "name": "Nail Extension in Gaya", "url": "https://www.srunisexsalongaya.com/services/nail-extension-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } },
+    { "@type": "ListItem", "position": 21, "item": { "@type": "Service", "name": "Laser Hair Removal in Gaya", "url": "https://www.srunisexsalongaya.com/services/laser-hair-removal-in-gaya.html", "provider": { "@id": "https://www.srunisexsalongaya.com/#salon" } } }
+  ]
+}
+</script>
+
+<!-- =========================================================
+     3. BREADCRUMB SCHEMA (Homepage)
+========================================================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
     {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Bridal Makeup in Gaya"
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://www.srunisexsalongaya.com/"
+    }
+  ]
+}
+</script>
+
+<!-- =========================================================
+     4. FAQ SCHEMA
+========================================================= -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What makes SR Unisex Salon the best salon in Gaya?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SR Unisex Salon is known as one of the best salons in Gaya for its expert staff, premium quality products, hygienic environment, and personalized services. From haircuts and skin treatments to bridal makeup, every service is designed to deliver professional and long-lasting results."
       }
     },
     {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "facial in Gaya"
+      "@type": "Question",
+      "name": "How can I book an appointment at SR Unisex Salon in Gaya?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can easily book your appointment at SR Unisex Salon in Gaya by calling +919430001237 or using the online booking option on the website. We recommend booking in advance, especially for weekends and bridal services."
       }
     },
     {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Nail extension in Gaya"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "hair treatment in Gaya"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Hair Styling in Gaya"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Skin Treatment in Gaya"
+      "@type": "Question",
+      "name": "What bridal services are available at SR Unisex Salon?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "SR Unisex Salon offers complete bridal services in Gaya including HD bridal makeup, airbrush makeup, pre-bridal skincare, hairstyling, nail extensions, and customized wedding packages to make your special day perfect."
       }
     }
   ]
@@ -144,7 +237,7 @@
                 
                 <!-- Logo -->
                 <div class="flex items-center gap-3">
-                    <img src="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp" alt="SR Unisex Salon Logo - Best Unisex Salon in Gaya, Bihar" class="h-14 w-auto drop-shadow-md" loading="eager">
+                    <img src="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp" alt="SR Unisex Salon Logo - Best Unisex Salon in Gaya, Bihar" class="h-14 w-auto drop-shadow-md" width="120" height="56" loading="eager">
                     <div>
                         <p class="heading-font text-lg md:text-2xl tracking-tighter text-[#1a1a1a]">SR Unisex Salon</p>
                         <p class="text-[#d4af77] text-xs font-medium -mt-1">By Sonam Roy</p>
@@ -207,6 +300,7 @@
     <img src="https://res.cloudinary.com/dnbmwltt6/image/upload/q_auto,f_auto/v1783514872/best_salon_in_gaya_vxtas8.webp"
          alt="Premium bridal makeup, hair spa and beauty services at SR Unisex Salon in Gaya"
          class="w-full h-full object-cover object-center md:object-center"
+         width="1920" height="1080"
          loading="eager"
          fetchpriority="high">
 </picture>
@@ -230,7 +324,7 @@
 </div>
 
     <h1 class="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight mb-6 max-w-3xl">
-      Best Salon in Gaya | SR Unisex Salon
+      Gaya's Most Trusted Unisex Salon for Hair, Skin & Bridal Care
     </h1>
     <p class="mt-3 text-[14px] leading-6 sm:text-base md:text-sm sm:text-base leading-7 text-white/90 mb-5 max-w-lg">
       Looking for the best salon in Gaya? SR Unisex Salon offers expert hair, skin, makeup, and nail services with professional care, hygiene, and premium products.
@@ -1321,7 +1415,7 @@
                 </div>
 
                 <a
-                    href="services/keratin-in-gaya.html"
+                    href="services/keratin-treatment-in-gaya.html"
                     class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-gray-900 text-white text-sm font-semibold hover:bg-[#b89555] transition-colors duration-300"
                 >
                     View Details
@@ -1878,7 +1972,7 @@
                     <p class="text-sm text-[#5f5f5f] leading-6">We deliver premium hair, skin and makeup services with expert stylists, premium products and a hygienic salon environment.</p>
                 </div>
                 <div class="rounded-xl bg-white p-5 md:p-8 shadow-sm border border-[#d4af77]/20">
-                    <h3 class="text-lg md:text-xl text-lg font-semibold mb-4">Can I book a service online or by phone?</h3>
+                    <h3 class="text-lg md:text-xl text-lg font-semibold mb-4">How can I book an appointment at SR Unisex Salon in Gaya?</h3>
                     <p class="text-sm text-[#5f5f5f] leading-6">Yes. Call +919430001237 or use the booking link to reserve your appointment instantly.</p>
                 </div>
                 <div class="rounded-xl bg-white p-5 md:p-8 shadow-sm border border-[#d4af77]/20">
