@@ -8,6 +8,7 @@ async function run() {
     `${SUPABASE_URL}/rest/v1/blogs?select=slug,updated_at&published=eq.true`,
     { headers: { apikey: SUPABASE_KEY } }
   );
+
   const blogs = await res.json();
 
   let sitemap = fs.readFileSync('sitemap.xml', 'utf8');
