@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login | SR Unisex Salon</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            background: #f7f5f2;
+            padding: 20px;
+        }
+
+        .login-box {
+            width: 100%;
+            max-width: 420px;
+            background: #fff;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .logo h1 {
+            margin: 0;
+            font-size: 25px;
+        }
+
+        .logo p {
+            margin-top: 8px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 18px;
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #888;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 8px;
+            background: #111;
+            color: white;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        #message {
+            margin-top: 15px;
+            text-align: center;
+            font-size: 14px;
+            min-height: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-box">
+
+        <div class="logo">
+            <h1>SR Unisex Salon</h1>
+            <p>Admin Panel Login</p>
+        </div>
+
+        <form id="loginForm">
+
+            <label for="email">Email</label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Admin email"
+                required
+            >
+
+            <label for="password">Password</label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Password"
+                required
+            >
+
+            <button type="submit" id="loginButton">
+                Login
+            </button>
+
+            <div id="message"></div>
+
+        </form>
+
+    </div>
+
+    <script>
+        const SUPABASE_URL = "https://pminjwfckghbhhssrmtr.supabase.co";
+        const SUPABASE_KEY = "sb_publishable_g1VgEwpLvDzoT-JOFAWHtw_p4Ye1fNN";
+
+        const { createClient } = supabase;
+
+        const supabaseClient = createClient(
+            SUPABASE_URL,
+            SUPABASE_KEY
+        );
+
+        const loginForm = document.getElementById("loginForm");
+        const loginButton = document.getElementById("loginButton");
+        const message = document.getElementById("message");
+
+        loginForm.addEventListener("submit", async (event) => {
+
+            event.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const password = document.getElementById("password").value;
+
+            loginButton.disabled = true;
+            loginButton.textContent = "Logging in...";
+            message.textContent = "";
+
+            const { data, error } =
+                await supabaseClient.auth.signInWithPassword({
+                    email: email,
+                    password: password
+                });
+
+            if (error) {
+
+                message.textContent = error.message;
+                message.style.color = "red";
+
+                loginButton.disabled = false;
+                loginButton.textContent = "Login";
+
+                return;
+            }
+
+            message.textContent = "Login successful...";
+            message.style.color = "green";
+
+            window.location.href = "/admin/dashboard.html";
+        });
+    </script>
+
+</body>
+</html>

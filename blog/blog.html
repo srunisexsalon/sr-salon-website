@@ -122,14 +122,6 @@
         rel="preconnect"
         href="https://res.cloudinary.com">
 
-
-    <!-- =====================================================
-         TAILWIND
-    ====================================================== -->
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-
     <!-- =====================================================
          FONT AWESOME
     ====================================================== -->
@@ -173,7 +165,7 @@
 
                 "address": {
                     "@type": "PostalAddress",
-                    "streetAddress": "Katari Hill Road, near Mirza Galib, White House Compound, Judges Colony",
+                    "streetAddress": "Katari Hill Road, near Mirza Ghalib Collage, White House Compound, Judges Colony",
                     "addressLocality": "Gaya",
                     "addressRegion": "Bihar",
                     "postalCode": "823001",
@@ -253,42 +245,57 @@
 
 
             {
-                "@type": "ItemList",
-                "@id": "https://www.srunisexsalongaya.com/blog/blog.html/#article-list",
-                "name": "SR Unisex Salon Blog Articles",
-                "numberOfItems": 4,
+    "@type": "ItemList",
+    "@id": "https://www.srunisexsalongaya.com/blog/blog.html/#article-list",
+    "name": "SR Unisex Salon Blog Articles",
+    "numberOfItems": 6,
 
-                "itemListElement": [
+    "itemListElement": [
 
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "url": "https://www.srunisexsalongaya.com/blog/haircare-tip.html",
-                        "name": "Hair Care Tips for Healthy Hair in Gaya"
-                    },
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://www.srunisexsalongaya.com/blog/bridal-makeup-trends.html",
+            "name": "Bridal Makeup Trends 2026 for Brides"
+        },
 
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "url": "https://www.srunisexsalongaya.com/blog/facial-routine-tips.html",
-                        "name": "Daily Facial Routine Tips for Glowing Skin"
-                    },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://www.srunisexsalongaya.com/blog/facial-routine-tips.html",
+            "name": "Facial Routine Tips for Healthy-Looking Skin"
+        },
 
-                    {
-                        "@type": "ListItem",
-                        "position": 3,
-                        "url": "https://www.srunisexsalongaya.com/blog/bridal-makeup-trends.html",
-                        "name": "Bridal Makeup Trends 2026 for Brides"
-                    },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "url": "https://www.srunisexsalongaya.com/blog/haircare-tip.html",
+            "name": "Everyday Haircare Tips for Healthier-Looking Hair"
+        },
 
-                    {
-                        "@type": "ListItem",
-                        "position": 4,
-                        "url": "https://www.srunisexsalongaya.com/blog/men-grooming-tips.html",
-                        "name": "Men's Grooming Tips"
-                    }
-                ]
-            }
+        {
+            "@type": "ListItem",
+            "position": 4,
+            "url": "https://www.srunisexsalongaya.com/blog/men-grooming-tips.html",
+            "name": "Men's Grooming Tips for a Clean & Polished Look"
+        },
+
+        {
+            "@type": "ListItem",
+            "position": 5,
+            "url": "https://www.srunisexsalongaya.com/blog/nail-care-tips.html",
+            "name": "Nail Care Tips for Clean, Healthy-Looking Nails"
+        },
+
+        {
+            "@type": "ListItem",
+            "position": 6,
+            "url": "https://www.srunisexsalongaya.com/blog/skincare-tips.html",
+            "name": "Simple Skincare Tips for Fresh, Healthy-Looking Skin"
+        }
+
+    ]
+}
 
         ]
     }
@@ -337,9 +344,7 @@
 
 <header>
 
-    <nav
-        class="bg-white border-b border-[#d4af77]/20 sticky top-0 z-50 shadow-sm"
-        aria-label="Main navigation">
+    <nav class="bg-white border-b border-[#d4af77]/20 fixed top-0 left-0 w-full z-50 shadow-sm" aria-label="Main navigation">
 
         <div
             class="max-w-7xl mx-auto px-5 sm:px-6 py-4 flex items-center justify-between">
@@ -561,7 +566,7 @@
     class="relative bg-white">
 
     <div
-        class="max-w-5xl mx-auto px-5 sm:px-6 py-16 sm:py-20 lg:py-24 text-center">
+        class="max-w-5xl mx-auto px-5 sm:px-6 pt-28 pb-16 sm:pt-20 sm:pb-20 lg:pt-24 lg:pb-24 text-center">
 
 
         <span
@@ -1039,6 +1044,39 @@
 
 </section>
 
+<section
+    id="new-supabase-blogs"
+    class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+
+    <div class="mb-8 text-center">
+
+        <span
+            class="text-sm font-semibold uppercase tracking-wider text-gray-500">
+            Latest
+        </span>
+
+        <h2
+            class="mt-2 text-3xl font-bold text-gray-900">
+            Latest Blog Posts
+        </h2>
+
+    </div>
+
+
+    <div
+        id="supabase-blog-grid"
+        class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+        <p
+            id="supabase-blog-loading"
+            class="col-span-full text-center text-gray-500">
+            Loading latest blogs...
+        </p>
+
+    </div>
+
+</section>
+
 
 
 <!-- =====================================================
@@ -1117,7 +1155,7 @@
     <div
         class="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
 
-
+        <!-- SECTION HEADING -->
         <div
             class="text-center mb-10">
 
@@ -1129,154 +1167,408 @@
 
             </h2>
 
-
             <p
-                class="text-gray-600 mt-4 leading-7">
+                class="text-gray-600 mt-4 leading-7 max-w-2xl mx-auto">
 
-                Learn about our professional beauty, hair and grooming services.
+                Explore professional hair, skin, beauty, nail and bridal
+                services available at SR Unisex Salon in Gaya.
 
             </p>
 
         </div>
 
 
+        <!-- =================================================
+             21 SERVICE CARDS
+        ================================================== -->
 
         <div
             class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
 
 
+            <!-- 01. Acne Treatment -->
+
             <a
-                href="/services/skin-treatment-in-gaya.html"
+                href="/services/acne-treatment-in-gaya.html"
                 class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
 
-                <h3
-                    class="font-semibold text-lg">
-
-                    Skin Treatment in Gaya
-
+                <h3 class="font-semibold text-lg">
+                    Acne Treatment in Gaya
                 </h3>
 
-                <p
-                    class="text-sm text-gray-600 mt-2 leading-6">
-
-                    Explore professional skin care and treatment options.
-
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional skin care focused on acne-prone skin and
+                    common skin concerns.
                 </p>
 
             </a>
 
 
+            <!-- 02. Advanced Facial -->
+
             <a
-                href="/services/hair-spa-in-gaya.html"
+                href="/services/advanced-facial-in-gaya.html"
                 class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
 
-                <h3
-                    class="font-semibold text-lg">
-
-                    Hair Spa in Gaya
-
+                <h3 class="font-semibold text-lg">
+                    Advanced Facial in Gaya
                 </h3>
 
-                <p
-                    class="text-sm text-gray-600 mt-2 leading-6">
-
-                    Professional hair spa and conditioning care.
-
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Advanced facial care designed to refresh, cleanse and
+                    improve the appearance of your skin.
                 </p>
 
             </a>
 
+
+            <!-- 03. Bridal Makeup -->
 
             <a
                 href="/services/bridal-makeup-in-gaya.html"
                 class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
 
-                <h3
-                    class="font-semibold text-lg">
-
+                <h3 class="font-semibold text-lg">
                     Bridal Makeup in Gaya
-
                 </h3>
 
-                <p
-                    class="text-sm text-gray-600 mt-2 leading-6">
-
-                    Bridal makeup and wedding beauty preparation.
-
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional bridal makeup and beauty preparation for
+                    weddings and special occasions.
                 </p>
 
             </a>
 
+
+            <!-- 04. Cleanup -->
 
             <a
-                href="/services/manicure-in-gaya.html"
+                href="/services/cleanup-in-gaya.html"
                 class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
 
-                <h3
-                    class="font-semibold text-lg">
-
-                    Manicure in Gaya
-
+                <h3 class="font-semibold text-lg">
+                    Cleanup in Gaya
                 </h3>
 
-                <p
-                    class="text-sm text-gray-600 mt-2 leading-6">
-
-                    Professional manicure and nail care services.
-
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional skin cleanup to refresh the skin and remove
+                    everyday buildup and impurities.
                 </p>
 
             </a>
 
+
+            <!-- 05. D-Tan -->
+
+            <a
+                href="/services/d-tan-in-gaya.html"
+                class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
+
+                <h3 class="font-semibold text-lg">
+                    D-Tan in Gaya
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional de-tan care to help refresh the appearance
+                    of sun-exposed skin.
+                </p>
+
+            </a>
+
+
+            <!-- 06. Facial -->
+
+            <a
+                href="/services/facial-in-gaya.html"
+                class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
+
+                <h3 class="font-semibold text-lg">
+                    Facial in Gaya
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional facial services for cleansing, refreshing
+                    and caring for your skin.
+                </p>
+
+            </a>
+
+
+            <!-- 07. Hair Botox -->
 
             <a
                 href="/services/hair-botox-in-gaya.html"
                 class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
 
-                <h3
-                    class="font-semibold text-lg">
-
+                <h3 class="font-semibold text-lg">
                     Hair Botox in Gaya
-
                 </h3>
 
-                <p
-                    class="text-sm text-gray-600 mt-2 leading-6">
-
-                    Explore hair smoothing and conditioning treatment options.
-
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Hair conditioning treatment designed to improve the look
+                    and feel of dry, damaged or frizzy hair.
                 </p>
 
             </a>
 
+
+            <!-- 08. Hair Colour -->
 
             <a
-                href="/#services"
+                href="/services/hair-colour-in-gaya.html"
                 class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
 
-                <h3
-                    class="font-semibold text-lg">
-
-                    View All Salon Services
-
+                <h3 class="font-semibold text-lg">
+                    Hair Colour in Gaya
                 </h3>
 
-                <p
-                    class="text-sm text-gray-600 mt-2 leading-6">
-
-                    Explore the complete range of services at SR Unisex Salon.
-
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional hair colouring services with styles and
+                    shades tailored to your look.
                 </p>
 
             </a>
+
+
+            <!-- 09. Hair Cut -->
+
+            <a
+                href="/services/hair-cut-in-gaya.html"
+                class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
+
+                <h3 class="font-semibold text-lg">
+                    Hair Cut in Gaya
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional haircuts and styling for women and men,
+                    tailored to your preferred look.
+                </p>
+
+            </a>
+
+
+            <!-- 10. Hair Spa -->
+
+            <a
+                href="/services/hair-spa-in-gaya.html"
+                class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
+
+                <h3 class="font-semibold text-lg">
+                    Hair Spa in Gaya
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional hair spa and conditioning care for healthier-
+                    looking, softer and more manageable hair.
+                </p>
+
+            </a>
+
+
+            <!-- 11. Hair Straightening -->
+
+            <a
+                href="/services/hair-straightening-in-gaya.html"
+                class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
+
+                <h3 class="font-semibold text-lg">
+                    Hair Straightening in Gaya
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional hair straightening services for a smoother,
+                    more polished hairstyle.
+                </p>
+
+            </a>
+
+
+            <!-- 12. Hair Styling -->
+
+            <a
+                href="/services/hair-styling-in-gaya.html"
+                class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
+
+                <h3 class="font-semibold text-lg">
+                    Hair Styling in Gaya
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional hair styling for everyday looks, events,
+                    parties and special occasions.
+                </p>
+
+            </a>
+
+
+            <!-- 13. Keratin Treatment -->
+
+            <a
+                href="/services/keratin-treatment-in-gaya.html"
+                class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
+
+                <h3 class="font-semibold text-lg">
+                    Keratin Treatment in Gaya
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional keratin treatment for smoother, shinier and
+                    more manageable-looking hair.
+                </p>
+
+            </a>
+
+
+            <!-- 14. Laser Hair Removal -->
+
+            <a
+                href="/services/laser-hair-removal-in-gaya.html"
+                class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
+
+                <h3 class="font-semibold text-lg">
+                    Laser Hair Removal in Gaya
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional laser hair removal services for selected
+                    areas with a focus on convenient grooming care.
+                </p>
+
+            </a>
+
+
+            <!-- 15. Manicure -->
+
+            <a
+                href="/services/manicure-in-gaya.html"
+                class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
+
+                <h3 class="font-semibold text-lg">
+                    Manicure in Gaya
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional manicure and hand care for clean, neat and
+                    well-groomed hands.
+                </p>
+
+            </a>
+
+
+            <!-- 16. Nail Extension -->
+
+            <a
+                href="/services/nail-extension-in-gaya.html"
+                class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
+
+                <h3 class="font-semibold text-lg">
+                    Nail Extension in Gaya
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional nail extension services for stylish and
+                    polished-looking nails.
+                </p>
+
+            </a>
+
+
+            <!-- 17. Nanoplastia Treatment -->
+
+            <a
+                href="/services/nanoplastia-treatment-in-gaya.html"
+                class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
+
+                <h3 class="font-semibold text-lg">
+                    Nanoplastia Treatment in Gaya
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional nanoplastia hair treatment for smoother,
+                    shinier and more manageable-looking hair.
+                </p>
+
+            </a>
+
+
+            <!-- 18. Pedicure -->
+
+            <a
+                href="/services/pedicure-in-gaya.html"
+                class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
+
+                <h3 class="font-semibold text-lg">
+                    Pedicure in Gaya
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional pedicure and foot care for clean, refreshed
+                    and well-groomed feet.
+                </p>
+
+            </a>
+
+
+            <!-- 19. Permanent Makeup -->
+
+            <a
+                href="/services/permanent-makeup-in-gaya.html"
+                class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
+
+                <h3 class="font-semibold text-lg">
+                    Permanent Makeup in Gaya
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional permanent makeup services designed for a
+                    defined and polished appearance.
+                </p>
+
+            </a>
+
+
+            <!-- 20. Skin Care -->
+
+            <a
+                href="/services/skin-care-in-gaya.html"
+                class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
+
+                <h3 class="font-semibold text-lg">
+                    Skin Care in Gaya
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional skin care services for cleansing, hydration,
+                    maintenance and everyday skin needs.
+                </p>
+
+            </a>
+
+
+            <!-- 21. Skin Treatment -->
+
+            <a
+                href="/services/skin-treatment-in-gaya.html"
+                class="rounded-xl border border-[#d4af77]/20 bg-[#f8f4ed] p-6 hover:border-[#d4af77] hover:shadow-md transition">
+
+                <h3 class="font-semibold text-lg">
+                    Skin Treatment in Gaya
+                </h3>
+
+                <p class="text-sm text-gray-600 mt-2 leading-6">
+                    Professional skin treatment options for different skin
+                    concerns and beauty care needs.
+                </p>
+
+            </a>
+
 
         </div>
 
     </div>
 
 </section>
-
-
 
 <!-- =====================================================
      CTA
@@ -1364,15 +1656,25 @@
 
 <a
     href="tel:+919430001237"
-    class="fixed bottom-0 left-0 right-0 md:hidden bg-[#d4af77] text-[#1a1a1a] py-4 text-center font-semibold z-50 call-now"
+    class="fixed bottom-5 left-5
+           w-12 h-12
+           md:w-14 md:h-14
+           flex items-center justify-center
+           bg-[#d4af77]
+           text-[#1a1a1a]
+           rounded-full
+           shadow-lg
+           z-50
+           hover:bg-[#b89157]
+           hover:scale-105
+           transition-all duration-300
+           call-now"
     aria-label="Call SR Unisex Salon Gaya">
 
     <i
-        class="fa-solid fa-phone mr-2"
-        aria-hidden="true">
-    </i>
-
-    CALL SR UNISEX SALON
+        class="fa-solid fa-phone
+               text-lg md:text-xl"
+        aria-hidden="true"></i>
 
 </a>
 
@@ -1411,7 +1713,7 @@
         <address
             class="not-italic text-xs text-gray-400 leading-6 mb-5">
 
-            Katari Hill Road, near Mirza Galib,
+            Katari Hill Road, near Mirza Ghalib Collage,
             White House Compound, Judges Colony,
             Gaya, Bihar 823001
 
@@ -1562,12 +1864,238 @@
 
 </footer>
 
+<!-- SUPABASE -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+
+    const SUPABASE_URL =
+        "https://pminjwfckghbhhssrmtr.supabase.co";
+
+    const SUPABASE_KEY =
+        "sb_publishable_g1VgEwpLvDzoT-JOFAWHtw_p4Ye1fNN";
+
+    const {
+        createClient
+    } = supabase;
+
+    const supabaseClient =
+        createClient(
+            SUPABASE_URL,
+            SUPABASE_KEY
+        );
 
 
-<!-- =====================================================
-     JAVASCRIPT
-====================================================== -->
+    async function loadSupabaseBlogs() {
 
+        const grid =
+            document.getElementById(
+                "supabase-blog-grid"
+            );
+
+        try {
+
+            const {
+                data,
+                error
+            } = await supabaseClient
+                .from("blogs")
+                .select(`
+                    title,
+                    slug,
+                    excerpt,
+                    featured_image,
+                    category,
+                    author,
+                    published_at
+                `)
+                .eq("published", true)
+                .order(
+                    "published_at",
+                    {
+                        ascending: false
+                    }
+                );
+
+
+            if (error) {
+
+                console.error(
+                    "Supabase blog error:",
+                    error
+                );
+
+                grid.innerHTML = `
+                    <p class="col-span-full text-center text-red-500">
+                        Unable to load latest blogs.
+                    </p>
+                `;
+
+                return;
+            }
+
+
+            if (!data || data.length === 0) {
+
+                grid.innerHTML = `
+                    <p class="col-span-full text-center text-gray-500">
+                        No new blog posts available.
+                    </p>
+                `;
+
+                return;
+            }
+
+
+            grid.innerHTML = "";
+
+
+            data.forEach(blog => {
+
+                const date =
+                    blog.published_at
+                        ? new Date(
+                            blog.published_at
+                          ).toLocaleDateString(
+                            "en-IN",
+                            {
+                                day: "2-digit",
+                                month: "long",
+                                year: "numeric"
+                            }
+                          )
+                        : "";
+
+
+                const image =
+                    blog.featured_image
+                        ? `
+                            <img
+                                src="${escapeHtml(blog.featured_image)}"
+                                alt="${escapeHtml(blog.title)}"
+                                class="w-full h-52 object-cover"
+                                loading="lazy">
+                          `
+                        : "";
+
+
+                const card = document.createElement(
+                    "article"
+                );
+
+                card.className =
+                    "rounded-2xl bg-white shadow-sm border border-[#d4af77]/20 overflow-hidden hover:shadow-lg transition";
+
+
+                card.innerHTML = `
+
+                    ${image}
+
+                    <div class="p-6">
+
+                        ${
+                            blog.category
+                                ? `
+                                    <span
+                                        class="inline-block text-[#d4af77] text-xs font-bold uppercase tracking-widest mb-3">
+                                        ${escapeHtml(blog.category)}
+                                    </span>
+                                  `
+                                : ""
+                        }
+
+
+                        <h3
+                            class="text-xl sm:text-2xl font-bold mb-4 leading-snug">
+
+                            ${escapeHtml(blog.title)}
+
+                        </h3>
+
+
+                        ${
+                            blog.excerpt
+                                ? `
+                                    <p
+                                        class="text-gray-600 leading-7 mb-5">
+
+                                        ${escapeHtml(blog.excerpt)}
+
+                                    </p>
+                                  `
+                                : ""
+                        }
+
+
+                        <div
+                            class="flex items-center justify-between gap-4">
+
+                            <time
+                                class="text-sm text-gray-500">
+
+                                ${date}
+
+                            </time>
+
+
+                            <a
+                                href="/blog/post.html?slug=${encodeURIComponent(blog.slug)}"
+                                class="inline-flex items-center gap-2 text-[#b89157] font-semibold hover:text-[#8f6b39] transition">
+
+                                Read Article
+
+                                <i
+                                    class="fa-solid fa-arrow-right"
+                                    aria-hidden="true">
+                                </i>
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+
+                grid.appendChild(card);
+
+            });
+
+        } catch (error) {
+
+            console.error(error);
+
+            grid.innerHTML = `
+                <p class="col-span-full text-center text-red-500">
+                    Unable to load latest blogs.
+                </p>
+            `;
+
+        }
+
+    }
+
+
+    function escapeHtml(value) {
+
+        if (!value) return "";
+
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+
+    }
+
+
+    loadSupabaseBlogs();
+
+</script>
+
+<!-- JAVASCRIPT -->
 <script src="../js/script.js"></script>
 
 </body>

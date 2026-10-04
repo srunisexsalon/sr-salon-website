@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard | SR Unisex Salon</title>
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f5f2;
+            color: #222;
+        }
+
+        .navbar {
+            background: #111;
+            color: white;
+            padding: 18px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .logout-btn {
+            border: 1px solid #555;
+            background: transparent;
+            color: white;
+            padding: 9px 16px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .logout-btn:hover {
+            background: #333;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .welcome {
+            margin-bottom: 30px;
+        }
+
+        .welcome h1 {
+            margin: 0 0 8px;
+            font-size: 30px;
+        }
+
+        .welcome p {
+            margin: 0;
+            color: #777;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 14px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.06);
+        }
+
+        .card-icon {
+            font-size: 30px;
+            margin-bottom: 15px;
+        }
+
+        .card h2 {
+            margin: 0 0 8px;
+            font-size: 20px;
+        }
+
+        .card p {
+            margin: 0 0 20px;
+            color: #777;
+            line-height: 1.5;
+        }
+
+        .card button {
+            border: none;
+            background: #111;
+            color: white;
+            padding: 11px 18px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .card button:hover {
+            opacity: 0.85;
+        }
+
+        #loading {
+            text-align: center;
+            padding: 50px;
+            color: #777;
+        }
+
+        #dashboard {
+            display: none;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!-- Loading -->
+
+    <div id="loading">
+        Checking admin login...
+    </div>
+
+
+    <!-- Dashboard -->
+
+    <div id="dashboard">
+
+        <header class="navbar">
+
+            <div class="brand">
+                SR Unisex Salon
+            </div>
+
+            <button
+                class="logout-btn"
+                id="logoutBtn">
+                Logout
+            </button>
+
+        </header>
+
+
+        <main class="container">
+
+            <div class="welcome">
+
+                <h1>
+                    Admin Dashboard
+                </h1>
+
+                <p id="adminEmail">
+                    Welcome
+                </p>
+
+            </div>
+
+
+            <div class="cards">
+
+
+                <!-- Blog Card -->
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        📝
+                    </div>
+
+                    <h2>
+                        Blog Posts
+                    </h2>
+
+                    <p>
+                        Create, edit and manage
+                        your salon blog posts.
+                    </p>
+
+                    <button
+                        id="newBlogBtn">
+                        Create New Blog
+                    </button>
+
+                </div>
+
+
+                <!-- Manage Blogs -->
+
+                <div class="card">
+
+                    <div class="card-icon">
+                        📚
+                    </div>
+
+                    <h2>
+                        Manage Blogs
+                    </h2>
+
+                    <p>
+                        View, edit and delete
+                        existing blog posts.
+                    </p>
+
+                    <button
+                        id="manageBlogsBtn">
+                        Manage Blogs
+                    </button>
+
+                </div>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <script>
+
+        /* =========================================
+           SUPABASE CONFIG
+        ========================================= */
+
+        const SUPABASE_URL =
+            "https://pminjwfckghbhhssrmtr.supabase.co";
+
+        const SUPABASE_KEY =
+            "sb_publishable_g1VgEwpLvDzoT-JOFAWHtw_p4Ye1fNN";
+
+
+        const {
+            createClient
+        } = supabase;
+
+
+        const supabaseClient =
+            createClient(
+                SUPABASE_URL,
+                SUPABASE_KEY
+            );
+
+
+        /* =========================================
+           ELEMENTS
+        ========================================= */
+
+        const loading =
+            document.getElementById("loading");
+
+        const dashboard =
+            document.getElementById("dashboard");
+
+        const adminEmail =
+            document.getElementById("adminEmail");
+
+        const logoutBtn =
+            document.getElementById("logoutBtn");
+
+
+        /* =========================================
+           CHECK LOGIN
+        ========================================= */
+
+        async function checkAdminLogin() {
+
+            const {
+                data,
+                error
+            } = await supabaseClient.auth.getSession();
+
+
+            if (error) {
+
+                console.error(error);
+
+                window.location.href =
+                    "/admin/login.html";
+
+                return;
+            }
+
+
+            const session =
+                data.session;
+
+
+            /* No login */
+
+            if (!session) {
+
+                window.location.href =
+                    "/admin/login.html";
+
+                return;
+            }
+
+
+            /* Logged in */
+
+            adminEmail.textContent =
+                "Logged in as: " +
+                session.user.email;
+
+
+            loading.style.display =
+                "none";
+
+            dashboard.style.display =
+                "block";
+        }
+
+
+        /* =========================================
+           LOGOUT
+        ========================================= */
+
+        logoutBtn.addEventListener(
+            "click",
+            async () => {
+
+                logoutBtn.disabled = true;
+
+                logoutBtn.textContent =
+                    "Logging out...";
+
+
+                const {
+                    error
+                } = await supabaseClient.auth.signOut();
+
+
+                if (error) {
+
+                    console.error(error);
+
+                    logoutBtn.disabled = false;
+
+                    logoutBtn.textContent =
+                        "Logout";
+
+                    return;
+                }
+
+
+                window.location.href =
+                    "/admin/login.html";
+
+            }
+        );
+
+
+        /* =========================================
+           BUTTONS
+        ========================================= */
+
+        document
+            .getElementById("newBlogBtn")
+            .addEventListener(
+                "click",
+                () => {
+
+                    window.location.href =
+                        "/admin/create-blog.html";
+
+                }
+            );
+
+
+        document
+            .getElementById("manageBlogsBtn")
+            .addEventListener(
+                "click",
+                () => {
+
+                    window.location.href =
+                        "/admin/blogs.html";
+
+                }
+            );
+
+
+        /* =========================================
+           START
+        ========================================= */
+
+        checkAdminLogin();
+
+    </script>
+
+</body>
+
+</html>

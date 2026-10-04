@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Create Blog | SR Unisex Salon</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f7f5f2;
+            color: #222;
+        }
+
+        .navbar {
+            background: #111;
+            color: white;
+            padding: 16px 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .back-btn {
+            background: transparent;
+            border: 1px solid #555;
+            color: white;
+            padding: 9px 15px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .form-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.06);
+        }
+
+        h1 {
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+        }
+
+        textarea {
+            min-height: 180px;
+            resize: vertical;
+        }
+
+        .content-area {
+            min-height: 400px;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: #888;
+        }
+
+        .slug-info {
+            font-size: 13px;
+            color: #777;
+            margin-top: 6px;
+        }
+
+        .checkbox-row {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .checkbox-row input {
+            width: auto;
+        }
+
+        .button-row {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .save-btn {
+            flex: 1;
+            border: none;
+            background: #111;
+            color: white;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .save-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .cancel-btn {
+            padding: 14px 25px;
+            border: 1px solid #ccc;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #message {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <header class="navbar">
+
+        <div class="brand">
+            SR Unisex Salon
+        </div>
+
+        <button
+            class="back-btn"
+            id="backBtn">
+            ← Dashboard
+        </button>
+
+    </header>
+
+
+    <main class="container">
+
+        <div class="form-box">
+
+            <h1>
+                Create New Blog
+            </h1>
+
+
+            <form id="blogForm">
+
+
+                <!-- TITLE -->
+
+                <div class="form-group">
+
+                    <label for="title">
+                        Blog Title *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="Example: Best Hair Care Tips for Healthy Hair"
+                        required>
+
+                </div>
+
+
+                <!-- SLUG -->
+
+                <div class="form-group">
+
+                    <label for="slug">
+                        URL Slug *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="slug"
+                        placeholder="best-hair-care-tips"
+                        required>
+
+                    <div class="slug-info">
+                        Example:
+                        /blog/best-hair-care-tips.html
+                    </div>
+
+                </div>
+
+
+                <!-- EXCERPT -->
+
+                <div class="form-group">
+
+                    <label for="excerpt">
+                        Short Description *
+                    </label>
+
+                    <textarea
+                        id="excerpt"
+                        placeholder="Write a short description of this blog..."
+                        required></textarea>
+
+                </div>
+
+
+                <!-- CONTENT -->
+
+                <div class="form-group">
+
+                    <label for="content">
+                        Blog Content *
+                    </label>
+
+                    <textarea
+                        id="content"
+                        class="content-area"
+                        placeholder="Write your complete blog content here..."
+                        required></textarea>
+
+                </div>
+
+
+                <!-- IMAGE -->
+
+                <div class="form-group">
+
+                    <label for="featured_image">
+                        Featured Image URL
+                    </label>
+
+                    <input
+                        type="url"
+                        id="featured_image"
+                        placeholder="https://example.com/image.jpg">
+
+                </div>
+
+
+                <!-- CATEGORY -->
+
+                <div class="form-group">
+
+                    <label for="category">
+                        Category
+                    </label>
+
+                    <select id="category">
+
+                        <option value="Hair">
+                            Hair
+                        </option>
+
+                        <option value="Skin">
+                            Skin
+                        </option>
+
+                        <option value="Beauty">
+                            Beauty
+                        </option>
+
+                        <option value="Bridal">
+                            Bridal
+                        </option>
+
+                        <option value="Nails">
+                            Nails
+                        </option>
+
+                        <option value="Salon Tips">
+                            Salon Tips
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- AUTHOR -->
+
+                <div class="form-group">
+
+                    <label for="author">
+                        Author
+                    </label>
+
+                    <input
+                        type="text"
+                        id="author"
+                        value="SR Unisex Salon">
+
+                </div>
+
+
+                <!-- META TITLE -->
+
+                <div class="form-group">
+
+                    <label for="meta_title">
+                        SEO Meta Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="meta_title"
+                        placeholder="SEO title for Google">
+
+                </div>
+
+
+                <!-- META DESCRIPTION -->
+
+                <div class="form-group">
+
+                    <label for="meta_description">
+                        SEO Meta Description
+                    </label>
+
+                    <textarea
+                        id="meta_description"
+                        placeholder="SEO description for Google"></textarea>
+
+                </div>
+
+                <!-- KEYWORDS -->
+
+                <div class="form-group">
+
+                <label for="keywords">
+                  SEO Keywords
+                </label>
+
+                <input
+                type="text"
+                id="keywords"
+                placeholder="best salon in gaya, hair salon in gaya, hair care tips in gaya">
+
+                <div class="slug-info">
+                 Enter keywords separated by commas.
+                </div>
+
+                </div>
+
+
+                <!-- PUBLISH -->
+
+                <div class="form-group">
+
+                    <label class="checkbox-row">
+
+                        <input
+                            type="checkbox"
+                            id="published">
+
+                        Publish this blog immediately
+
+                    </label>
+
+                </div>
+
+
+                <div class="button-row">
+
+                    <button
+                        type="button"
+                        class="cancel-btn"
+                        id="cancelBtn">
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="save-btn"
+                        id="saveBtn">
+                        Save Blog
+                    </button>
+
+                </div>
+
+
+                <div id="message"></div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <script>
+
+        /* =========================================
+           SUPABASE CONFIG
+        ========================================= */
+
+        const SUPABASE_URL =
+            "https://pminjwfckghbhhssrmtr.supabase.co";
+
+        const SUPABASE_KEY =
+            "sb_publishable_g1VgEwpLvDzoT-JOFAWHtw_p4Ye1fNN";
+
+
+        const {
+            createClient
+        } = supabase;
+
+
+        const supabaseClient =
+            createClient(
+                SUPABASE_URL,
+                SUPABASE_KEY
+            );
+
+
+        /* =========================================
+           ELEMENTS
+        ========================================= */
+
+        const blogForm =
+            document.getElementById("blogForm");
+
+        const saveBtn =
+            document.getElementById("saveBtn");
+
+        const message =
+            document.getElementById("message");
+
+        const titleInput =
+            document.getElementById("title");
+
+        const slugInput =
+            document.getElementById("slug");
+
+
+        /* =========================================
+           CHECK LOGIN
+        ========================================= */
+
+        async function checkLogin() {
+
+            const {
+                data,
+                error
+            } = await supabaseClient.auth.getSession();
+
+
+            if (error || !data.session) {
+
+                window.location.href =
+                    "/admin/login.html";
+
+                return false;
+            }
+
+            return true;
+        }
+
+
+        /* =========================================
+           CREATE SLUG
+        ========================================= */
+
+        titleInput.addEventListener(
+            "input",
+            () => {
+
+                if (
+                    document.activeElement !== slugInput
+                    || slugInput.value === ""
+                ) {
+
+                    const slug =
+                        titleInput.value
+                        .toLowerCase()
+                        .trim()
+                        .replace(/[^a-z0-9\s-]/g, "")
+                        .replace(/\s+/g, "-")
+                        .replace(/-+/g, "-");
+
+                    slugInput.value = slug;
+                }
+
+            }
+        );
+
+
+        /* =========================================
+           SAVE BLOG
+        ========================================= */
+
+        blogForm.addEventListener(
+            "submit",
+            async (event) => {
+
+                event.preventDefault();
+
+
+                const loggedIn =
+                    await checkLogin();
+
+                if (!loggedIn) return;
+
+
+                saveBtn.disabled = true;
+                saveBtn.textContent =
+                    "Saving...";
+
+                message.textContent = "";
+
+
+                const isPublished =
+                    document.getElementById(
+                        "published"
+                    ).checked;
+
+
+                const blogData = {
+
+                    title:
+                        titleInput.value.trim(),
+
+                    slug:
+                        slugInput.value.trim(),
+
+                    excerpt:
+                        document.getElementById(
+                            "excerpt"
+                        ).value.trim(),
+
+                    content:
+                        document.getElementById(
+                            "content"
+                        ).value.trim(),
+
+                    featured_image:
+                        document.getElementById(
+                            "featured_image"
+                        ).value.trim() || null,
+
+                    category:
+                        document.getElementById(
+                            "category"
+                        ).value,
+
+                    author:
+                        document.getElementById(
+                            "author"
+                        ).value.trim(),
+
+                    meta_title:
+                        document.getElementById(
+                            "meta_title"
+                        ).value.trim() || null,
+
+                    meta_description:
+                        document.getElementById(
+                            "meta_description"
+                        ).value.trim() || null,
+
+                    keywords:
+                        document.getElementById(
+                          "keywords"
+                        ).value.trim() || null,
+
+                    published:
+                        isPublished,
+
+                    published_at:
+                        isPublished
+                            ? new Date().toISOString()
+                            : null,
+
+                    updated_at:
+                        new Date().toISOString()
+
+                };
+
+
+                const {
+                    data,
+                    error
+                } = await supabaseClient
+                    .from("blogs")
+                    .insert([blogData])
+                    .select();
+
+
+                if (error) {
+
+                    console.error(error);
+
+                    message.textContent =
+                        error.message;
+
+                    message.style.color =
+                        "red";
+
+                    saveBtn.disabled =
+                        false;
+
+                    saveBtn.textContent =
+                        "Save Blog";
+
+                    return;
+                }
+
+
+                message.textContent =
+                    "Blog saved successfully!";
+
+                message.style.color =
+                    "green";
+
+
+                saveBtn.textContent =
+                    "Saved ✓";
+
+
+                setTimeout(() => {
+
+                    window.location.href =
+                        "/admin/dashboard.html";
+
+                }, 1200);
+
+            }
+        );
+
+
+        /* =========================================
+           NAVIGATION
+        ========================================= */
+
+        document
+            .getElementById("backBtn")
+            .addEventListener(
+                "click",
+                () => {
+
+                    window.location.href =
+                        "/admin/dashboard.html";
+
+                }
+            );
+
+
+        document
+            .getElementById("cancelBtn")
+            .addEventListener(
+                "click",
+                () => {
+
+                    window.location.href =
+                        "/admin/dashboard.html";
+
+                }
+            );
+
+
+        /* =========================================
+           START
+        ========================================= */
+
+        checkLogin();
+
+    </script>
+
+</body>
+
+</html>
