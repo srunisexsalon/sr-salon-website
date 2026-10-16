@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 
 <head>
 
@@ -16,6 +16,15 @@
     <title>
         Hair Botox in Gaya | Hair Botox Treatment | SR Unisex Salon
     </title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3R0NBNFVNM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3R0NBNFVNM');
+    </script>
 
 
     <!-- =====================================================
@@ -88,7 +97,7 @@
 
     <meta
         property="og:image"
-        content="https://res.cloudinary.com/dnbmwltt6/image/upload/v1787658769/Hair-Botox-Treatment-in-gaya_dwdnqr.webp">
+        content="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1787658769/Hair-Botox-Treatment-in-gaya_dwdnqr.webp">
 
     <!-- =====================================================
         Twitter Card meta tags
@@ -96,7 +105,8 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Hair Botox in Gaya | SR Unisex Salon">
     <meta name="twitter:description" content="Professional hair botox treatment in Gaya for smoother, softer and more manageable-looking hair at SR Unisex Salon.">
-    <meta name="twitter:image" content="https://res.cloudinary.com/dnbmwltt6/image/upload/v1787658769/Hair-Botox-Treatment-in-gaya_dwdnqr.webp">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1787658769/Hair-Botox-Treatment-in-gaya_dwdnqr.webp">
+    <meta name="twitter:image:alt" content="SR Unisex Salon at SR Unisex Salon">
 
 
     <!-- =====================================================
@@ -136,7 +146,7 @@
     <link
         rel="preload"
         as="image"
-        href="https://res.cloudinary.com/dnbmwltt6/image/upload/v1787658769/Hair-Botox-Treatment-in-gaya_dwdnqr.webp">
+        href="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1787658769/Hair-Botox-Treatment-in-gaya_dwdnqr.webp">
 
     <!-- =====================================================
          FONT AWESOME
@@ -167,46 +177,45 @@
   "@graph": [
 
     {
-      "@type": [
-        "Organization",
-        "LocalBusiness",
-        "BeautySalon"
-      ],
-
+      "@type": "BeautySalon",
       "@id": "https://www.srunisexsalongaya.com/#salon",
-
       "name": "SR Unisex Salon",
-
       "url": "https://www.srunisexsalongaya.com/",
-
       "telephone": "+919430001237",
-
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp"
-      },
-
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://res.cloudinary.com/dnbmwltt6/image/upload/v1787658769/Hair-Botox-Treatment-in-gaya_dwdnqr.webp"
-      },
-
+      "image": "https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp",
+      "logo": "https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp",
       "priceRange": "₹₹",
-
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Katari Hill Rd, near Mirza Ghalib Collage, White House Compound, Judges Colony",
+        "streetAddress": "Katari Hill Rd, near Mirza Ghalib College, White House Compound, Judges Colony",
         "addressLocality": "Gaya",
         "addressRegion": "Bihar",
         "postalCode": "823001",
         "addressCountry": "IN"
       },
-
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 24.791139,
+        "longitude": 84.989835
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+      },
       "areaServed": {
         "@type": "City",
         "name": "Gaya"
       },
-
       "sameAs": [
         "https://www.instagram.com/sr_unisexsalon",
         "https://www.facebook.com/salonsrunisex"
@@ -248,9 +257,11 @@
 
             "name": "Hair Botox",
 
-            "price": "4999",
-
-            "priceCurrency": "INR",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 4999,
+              "priceCurrency": "INR"
+            },
 
             "url": "https://www.srunisexsalongaya.com/services/hair-botox-in-gaya.html#pricing",
 
@@ -266,9 +277,11 @@
 
             "name": "Hair Botox + Hair Spa",
 
-            "price": "6999",
-
-            "priceCurrency": "INR",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 6999,
+              "priceCurrency": "INR"
+            },
 
             "url": "https://www.srunisexsalongaya.com/services/hair-botox-in-gaya.html#pricing",
 
@@ -383,22 +396,15 @@
 
         {
           "@type": "ListItem",
-
           "position": 1,
-
           "name": "Home",
-
           "item": "https://www.srunisexsalongaya.com/"
         },
 
-
         {
           "@type": "ListItem",
-
           "position": 2,
-
           "name": "Hair Botox in Gaya",
-
           "item": "https://www.srunisexsalongaya.com/services/hair-botox-in-gaya.html"
         }
 
@@ -669,6 +675,25 @@
 
                 </a>
 
+                <a
+                    href="/#services"
+                    data-extra-nav
+                    class="mobile-menu-link py-3 px-3 rounded-lg
+                           hover:bg-[#f8f4ed]">
+
+                    All Services
+
+                </a>
+
+                <a
+                    href="/#contact"
+                    class="mobile-menu-link py-3 px-3 rounded-lg
+                           hover:bg-[#f8f4ed]">
+
+                    Contact
+
+                </a>
+
             </div>
 
         </div>
@@ -815,12 +840,13 @@
 
 
             <img
-                src="https://res.cloudinary.com/dnbmwltt6/image/upload/v1787658769/Hair-Botox-Treatment-in-gaya_dwdnqr.webp"
+                src="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1787658769/Hair-Botox-Treatment-in-gaya_dwdnqr.webp"
                 alt="Hair Botox treatment in Gaya at SR Unisex Salon"
                 class="w-full aspect-[4/3] object-cover"
                 width="1200"
                 height="900"
                 loading="eager"
+                fetchpriority="high"
                 decoding="async">
 
         </div>
@@ -2679,7 +2705,7 @@
                 </p>
 
                 <p>
-                    We're on Katari Hill Road, near Mirza Ghalib Collage, White
+                    We're on Katari Hill Road, near Mirza Ghalib College, White
                     House Compound, Judges Colony, Gaya. Whatever your
                     hair's dealing with — dryness, frizz, dullness — tell
                     us and we'll figure out the right approach.
@@ -2758,11 +2784,15 @@
                    text-xs text-gray-400
                    leading-6 mb-5">
 
-            Katari Hill Road, near Mirza Ghalib Collage,
+            Katari Hill Road, near Mirza Ghalib College,
             White House Compound, Judges Colony,
             Gaya, Bihar 823001
 
         </address>
+
+        <p class="text-xs text-gray-400 mb-5">
+            <a href="tel:+919430001237" data-footer-phone class="hover:text-[#d4af77]">+91 94300 01237</a>
+        </p>
 
 <!-- =================================================
      QUICK LINKS
@@ -3009,11 +3039,7 @@
      SITE-WIDE JAVASCRIPT
 ====================================================== -->
 
-<script
-    src="../js/script.js"
-    defer>
-</script>
-
+<script src="/js/script.min.js" defer></script>
 
 <!-- =====================================================
      PAGE-LEVEL CSS

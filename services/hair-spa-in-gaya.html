@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
 
     <meta charset="UTF-8">
@@ -11,8 +11,17 @@
         Hair Spa in Gaya | Hair Spa Treatment | SR Unisex Salon
     </title>
 
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3R0NBNFVNM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3R0NBNFVNM');
+    </script>
+
     <meta name="description"
-          content="Hair spa in Gaya at SR Unisex Salon for dry, rough and dull-looking hair. Enjoy cleansing, conditioning, nourishment and relaxing hair-care services based on your hair needs.">
+          content="Hair spa in Gaya at SR Unisex Salon for dry, rough or dull-looking hair: cleansing, conditioning and nourishment. From ₹1,499. Ask on WhatsApp.">
 
     <link rel="canonical"
           href="https://www.srunisexsalongaya.com/services/hair-spa-in-gaya.html">
@@ -44,7 +53,9 @@
           content="https://www.srunisexsalongaya.com/services/hair-spa-in-gaya.html">
 
     <meta property="og:image"
-          content="https://res.cloudinary.com/dnbmwltt6/image/upload/v1783686209/hair_spa_in_gaya_chqqti.webp">
+          content="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783686209/hair_spa_in_gaya_chqqti.webp">
+
+    <meta property="og:image:alt" content="Hair Spa in Gaya at SR Unisex Salon">
 
     <meta property="og:site_name"
           content="SR Unisex Salon">
@@ -55,31 +66,30 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Hair Spa in Gaya | Hair Spa Treatment | SR Unisex Salon">
     <meta name="twitter:description" content="Professional hair spa and nourishing hair-care services in Gaya at SR Unisex Salon.">
-    <meta name="twitter:image" content="https://res.cloudinary.com/dnbmwltt6/image/upload/v1783686209/hair_spa_in_gaya_chqqti.webp">
+    <meta name="twitter:image" content="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783686209/hair_spa_in_gaya_chqqti.webp">
+    <meta name="twitter:image:alt" content="Hair Spa in Gaya at SR Unisex Salon">
 
 
     <!-- =====================================================
          FAVICON
     ====================================================== -->
 
-    <link rel="icon"
-          href="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp">
+    <link rel="icon" href="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp" type="image/webp">
 
 
     <!-- =====================================================
          HERO IMAGE PRELOAD
     ====================================================== -->
 
-    <link rel="preload"
-          as="image"
-          href="https://res.cloudinary.com/dnbmwltt6/image/upload/v1783686209/hair_spa_in_gaya_chqqti.webp">
+    <link rel="preload" as="image" href="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783686209/hair_spa_in_gaya_chqqti.webp" fetchpriority="high">
 
     <!-- =====================================================
          FONT AWESOME
     ====================================================== -->
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
 
     <!-- =====================================================
@@ -101,46 +111,45 @@
   "@graph": [
 
     {
-      "@type": [
-        "Organization",
-        "LocalBusiness",
-        "BeautySalon"
-      ],
-
+      "@type": "BeautySalon",
       "@id": "https://www.srunisexsalongaya.com/#salon",
-
       "name": "SR Unisex Salon",
-
       "url": "https://www.srunisexsalongaya.com/",
-
       "telephone": "+919430001237",
-
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp"
-      },
-
-      "image": {
-        "@type": "ImageObject",
-        "url": "https://res.cloudinary.com/dnbmwltt6/image/upload/v1783686209/hair_spa_in_gaya_chqqti.webp"
-      },
-
+      "image": "https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp",
+      "logo": "https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp",
       "priceRange": "₹₹",
-
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Katari Hill Rd, near Mirza Ghalib Collage, White House Compound, Judges Colony",
+        "streetAddress": "Katari Hill Rd, near Mirza Ghalib College, White House Compound, Judges Colony",
         "addressLocality": "Gaya",
         "addressRegion": "Bihar",
         "postalCode": "823001",
         "addressCountry": "IN"
       },
-
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 24.791139,
+        "longitude": 84.989835
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "09:00",
+        "closes": "21:00"
+      },
       "areaServed": {
         "@type": "City",
         "name": "Gaya"
       },
-
       "sameAs": [
         "https://www.instagram.com/sr_unisexsalon",
         "https://www.facebook.com/salonsrunisex"
@@ -182,9 +191,11 @@
 
             "name": "Standard Hair Spa",
 
-            "price": "1499",
-
-            "priceCurrency": "INR",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 1499,
+              "priceCurrency": "INR"
+            },
 
             "url": "https://www.srunisexsalongaya.com/services/hair-spa-in-gaya.html#pricing",
 
@@ -200,9 +211,11 @@
 
             "name": "Nourishing Hair Spa",
 
-            "price": "1799",
-
-            "priceCurrency": "INR",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 1799,
+              "priceCurrency": "INR"
+            },
 
             "url": "https://www.srunisexsalongaya.com/services/hair-spa-in-gaya.html#pricing",
 
@@ -218,9 +231,11 @@
 
             "name": "Premium Hair Spa",
 
-            "price": "2499",
-
-            "priceCurrency": "INR",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "minPrice": 2499,
+              "priceCurrency": "INR"
+            },
 
             "url": "https://www.srunisexsalongaya.com/services/hair-spa-in-gaya.html#pricing",
 
@@ -321,22 +336,15 @@
 
         {
           "@type": "ListItem",
-
           "position": 1,
-
           "name": "Home",
-
           "item": "https://www.srunisexsalongaya.com/"
         },
 
-
         {
           "@type": "ListItem",
-
           "position": 2,
-
           "name": "Hair Spa in Gaya",
-
           "item": "https://www.srunisexsalongaya.com/services/hair-spa-in-gaya.html"
         }
 
@@ -582,6 +590,25 @@
 
                 </a>
 
+                <a
+                    href="/#services"
+                    data-extra-nav
+                    class="mobile-menu-link py-3 px-3 rounded-lg
+                           hover:bg-[#f8f4ed]">
+
+                    All Services
+
+                </a>
+
+                <a
+                    href="/#contact"
+                    class="mobile-menu-link py-3 px-3 rounded-lg
+                           hover:bg-[#f8f4ed]">
+
+                    Contact
+
+                </a>
+
             </div>
 
         </div>
@@ -723,12 +750,13 @@
                    ring-1 ring-black/5">
 
             <img
-                src="https://res.cloudinary.com/dnbmwltt6/image/upload/v1783686209/hair_spa_in_gaya_chqqti.webp"
+                src="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783686209/hair_spa_in_gaya_chqqti.webp"
                 alt="Hair spa treatment at SR Unisex Salon in Gaya"
                 class="w-full aspect-[4/3] object-cover"
                 width="1200"
                 height="900"
                 loading="eager"
+                fetchpriority="high"
                 decoding="async">
 
         </div>
@@ -2521,7 +2549,7 @@
                 </p>
 
                 <p>
-                    We're on Katari Hill Road, near Mirza Ghalib Collage, White
+                    We're on Katari Hill Road, near Mirza Ghalib College, White
                     House Compound, Judges Colony, Gaya. Message us
                     whenever suits you.
                 </p>
@@ -2611,11 +2639,15 @@
                    text-xs text-gray-400
                    leading-6 mb-5">
 
-            Katari Hill Road, near Mirza Ghalib Collage,
+            Katari Hill Road, near Mirza Ghalib College,
             White House Compound, Judges Colony,
             Gaya, Bihar 823001
 
         </address>
+
+        <p class="text-xs text-gray-400 mb-5">
+            <a href="tel:+919430001237" data-footer-phone class="hover:text-[#d4af77]">+91 94300 01237</a>
+        </p>
 
 
 <!-- =================================================
@@ -2746,7 +2778,7 @@
                        hover:text-[#d4af77]
                        transition">
 
-                D-tan
+                D-Tan
 
             </a>
 
@@ -2874,11 +2906,7 @@
      SITE-WIDE JAVASCRIPT
 ====================================================== -->
 
-<script
-    src="../js/script.js"
-    defer>
-</script>
-
+<script src="/js/script.min.js" defer></script>
 
 <!-- =====================================================
      PAGE-LEVEL CSS

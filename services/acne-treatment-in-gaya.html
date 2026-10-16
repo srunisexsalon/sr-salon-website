@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-IN">
 <head>
 
     <meta charset="UTF-8">
@@ -8,8 +8,17 @@
           content="width=device-width, initial-scale=1.0">
 
     <title>
-        Acne Treatment in Gaya | Acne-Prone Skin Care | SR Unisex Salon
+        Acne Treatment in Gaya | Skin Care at SR Unisex Salon
     </title>
+
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3R0NBNFVNM"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-3R0NBNFVNM');
+    </script>
 
     <meta name="description"
           content="Acne-prone skin care in Gaya at SR Unisex Salon with gentle cleansing, suitable facial care and hydration based on your skin type. Contact us on WhatsApp.">
@@ -45,6 +54,8 @@
     <meta property="og:image"
           content="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1787656880/acne-treatment-gaya_rvzhm9.webp">
 
+    <meta property="og:image:alt" content="Acne Treatment in Gaya at SR Unisex Salon">
+
     <meta property="og:site_name"
           content="SR Unisex Salon">
 
@@ -56,13 +67,14 @@
     <meta name="twitter:title" content="Acne Treatment in Gaya | SR Unisex Salon">
     <meta name="twitter:description" content="Explore acne-prone skin care and facial services in Gaya at SR Unisex Salon.">
     <meta name="twitter:image" content="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1787656880/acne-treatment-gaya_rvzhm9.webp">
+    <meta name="twitter:image:alt" content="Acne Treatment in Gaya at SR Unisex Salon">
 
     <!-- =====================================================
          FAVICON
     ====================================================== -->
 
     <link rel="icon"
-          href="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp">
+          href="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm..webp" type="image/webp">
 
     <!-- =====================================================
          HERO IMAGE PRELOAD
@@ -70,14 +82,15 @@
 
     <link rel="preload"
           as="image"
-          href="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1787656880/acne-treatment-gaya_rvzhm9.webp">
+          href="https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1787656880/acne-treatment-gaya_rvzhm9..webp" fetchpriority="high">
 
     <!-- =====================================================
          FONT AWESOME
     ====================================================== -->
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
 
     <!-- =====================================================
          MAIN CSS
@@ -99,44 +112,31 @@
   "@context": "https://schema.org",
   "@graph": [
 
-    {
-      "@type": [
-        "LocalBusiness",
-        "BeautySalon"
-      ],
+        {
+      "@type": "BeautySalon",
       "@id": "https://www.srunisexsalongaya.com/#salon",
-
       "name": "SR Unisex Salon",
-
       "url": "https://www.srunisexsalongaya.com/",
-
       "telephone": "+919430001237",
-
-      "image": "https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1787656880/acne-treatment-gaya_rvzhm9.webp",
-
-      "logo": {
-        "@type": "ImageObject",
-        "@id": "https://www.srunisexsalongaya.com/#logo",
-        "url": "https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp",
-        "contentUrl": "https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp"
-      },
-
+      "image": "https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp",
+      "logo": "https://res.cloudinary.com/dnbmwltt6/image/upload/f_auto,q_auto/v1783515429/sr_unisex_salon_logo_iov8i2_pzt6nm.webp",
       "priceRange": "₹₹",
-
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Katari Hill Rd, near Mirza Ghalib Collage, White House Compound, Judges Colony",
+        "streetAddress": "Katari Hill Rd, near Mirza Ghalib College, White House Compound, Judges Colony",
         "addressLocality": "Gaya",
         "addressRegion": "Bihar",
         "postalCode": "823001",
         "addressCountry": "IN"
       },
-
-      "areaServed": {
-        "@type": "City",
-        "name": "Gaya"
+      "geo": { "@type": "GeoCoordinates", "latitude": 24.79113, "longitude": 84.989835 },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "09:00",
+        "closes": "21:00"
       },
-
+      "areaServed": { "@type": "City", "name": "Gaya" },
       "sameAs": [
         "https://www.instagram.com/sr_unisexsalon",
         "https://www.facebook.com/salonsrunisex"
@@ -188,13 +188,6 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Services",
-          "item": "https://www.srunisexsalongaya.com/services/"
-        },
-
-        {
-          "@type": "ListItem",
-          "position": 3,
           "name": "Acne Treatment in Gaya",
           "item": "https://www.srunisexsalongaya.com/services/acne-treatment-in-gaya.html"
         }
@@ -368,7 +361,7 @@
                     class="text-[#d4af77] font-semibold"
                     aria-current="page">
 
-                    Acne Care
+                    Acne Treatment
 
                 </a>
 
@@ -392,7 +385,7 @@
                     href="/services/nail-extension-in-gaya.html"
                     class="hover:text-[#d4af77] transition">
 
-                    Nail Art
+                    Nail Extension
 
                 </a>
 
@@ -491,7 +484,7 @@
                     class="mobile-menu-link py-3 px-3 rounded-lg
                            hover:bg-[#f8f4ed]">
 
-                    Nail Art
+                    Nail Extension
 
                 </a>
 
@@ -501,6 +494,25 @@
                            hover:bg-[#f8f4ed]">
 
                     Keratin Treatment
+
+                </a>
+
+                
+                <a
+                    href="/#services"
+                    class="mobile-menu-link py-3 px-3 rounded-lg
+                           hover:bg-[#f8f4ed]">
+
+                    All Services
+
+                </a>
+
+                <a
+                    href="/#contact"
+                    class="mobile-menu-link py-3 px-3 rounded-lg
+                           hover:bg-[#f8f4ed]">
+
+                    Contact
 
                 </a>
 
@@ -651,6 +663,7 @@
                 width="1200"
                 height="900"
                 loading="eager"
+                fetchpriority="high"
                 decoding="async">
 
         </div>
@@ -1232,7 +1245,7 @@
                     class="text-base sm:text-lg
                            font-semibold mb-2">
 
-                    Acne Scars Treatment
+                    Skin Treatment
 
                 </h3>
 
@@ -1441,10 +1454,7 @@
                     class="text-sm text-gray-600 
                            leading-6">
 
-                    Professional skincare approaches for skin 
-                    that looks uneven or textured after acne, 
-                    with treatments selected according to 
-                    individual skin needs.
+                    Cosmetic skin care for skin that looks uneven or textured after acne. Deep or pitted scars need a dermatologist; salon care is cosmetic only.
 
                 </p>
 
@@ -1574,7 +1584,7 @@
                        text-2xl sm:text-3xl lg:text-4xl
                        mt-3">
 
-                Acne type and Treatment Price in Gaya
+                Acne Types and Treatment Price in Gaya
 
             </h2>
 
@@ -1676,7 +1686,7 @@
                 <h3
                     class="text-xl font-semibold mb-3">
 
-                    Severe Acne
+                    Stubborn or Painful Breakouts
 
                 </h3>
 
@@ -1685,17 +1695,16 @@
                     class="text-sm text-gray-600
                            leading-6 mb-5">
 
-                    Severe acne can involve numerous
-                    inflamed pimples, painful deep bumps,
-                    nodules or cyst-like lesions and may
-                    leave marks or scars.
+                    If breakouts are painful, widespread or keep coming back,
+                    please see a dermatologist first. We can still offer gentle
+                    cosmetic skin care alongside their advice.
 
                 </p>
 
 
                 <p class="pricing-inquiry text-base font-semibold">
 
-                    Starting from ₹3,499
+                    Price on consultation
 
                 </p>
 
@@ -2467,7 +2476,7 @@
                 <p>
                     If this sounds like what you're looking for, reach out
                     and we'll talk through what would suit your skin. We're
-                    on Katari Hill Road, near Mirza Ghalib Collage, White House
+                    on Katari Hill Road, near Mirza Ghalib College, White House
                     Compound, Judges Colony, Gaya — happy to walk you
                     through the options before you book anything.
                 </p>
@@ -2562,11 +2571,16 @@
                    text-xs text-gray-400
                    leading-6 mb-5">
 
-            Katari Hill Road, near Mirza Ghalib Collage,
+            Katari Hill Road, near Mirza Ghalib College,
             White House Compound, Judges Colony,
             Gaya, Bihar 823001
 
         </address>
+
+        
+        <p class="text-xs text-gray-400 mb-5">
+            <a href="tel:+919430001237" class="hover:text-[#d4af77]">+91 94300 01237</a>
+        </p>
 
 
 <!-- =================================================
@@ -2826,11 +2840,7 @@
      SITE-WIDE JAVASCRIPT
 ====================================================== -->
 
-<script
-    src="../js/script.js"
-    defer>
-</script>
-
+<script src="/js/script.min.js" defer></script>
 
 <!-- =====================================================
      PAGE-LEVEL CSS
