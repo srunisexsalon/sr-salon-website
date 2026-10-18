@@ -645,6 +645,38 @@
 
             </div>
 
+            <!-- =========================================
+                 RELATED SERVICES (auto-filled by script)
+            ========================================== -->
+
+            <section
+                id="related-services"
+                class="hidden mt-14"
+                aria-labelledby="related-services-heading">
+
+                <h2
+                    id="related-services-heading"
+                    class="heading-font text-2xl sm:text-3xl font-semibold text-[#1a1a1a] mb-2">
+
+                    Related Services at SR Unisex Salon
+
+                </h2>
+
+                <p
+                    class="text-sm sm:text-base text-gray-600 leading-7 mb-6">
+
+                    Want to try something mentioned in this article?
+                    Explore the related services we offer in Gaya.
+
+                </p>
+
+                <div
+                    id="related-services-list"
+                    class="grid gap-4 sm:grid-cols-2">
+                </div>
+
+            </section>
+
 
             <!-- =========================================
                  AUTHOR BOX
@@ -1608,7 +1640,8 @@ if (ogImageHeight) {
             /* -------------------------------------------
                ARTICLE SCHEMA
             -------------------------------------------- */
-
+            addServiceLinks(blog, content);
+            
             createArticleSchema(
                 blog,
                 canonical,
@@ -1647,6 +1680,260 @@ if (ogImageHeight) {
         }
 
     }
+
+    /* =====================================================
+   SERVICE INTERLINKING
+====================================================== */
+
+const SERVICE_LINKS = [
+
+    { name: "Laser Hair Removal", url: "/services/laser-hair-removal-in-gaya.html",
+      desc: "Consultation-led hair reduction for selected face and body areas.",
+      keys: ["laser hair removal", "laser hair reduction", "laser treatment"] },
+
+    { name: "Cleanup", url: "/services/cleanup-in-gaya.html",
+      desc: "Deep cleansing to refresh dull and tired-looking skin.",
+      keys: ["cleanup", "clean-up", "deep cleansing"] },
+
+    { name: "D-Tan", url: "/services/d-tan-in-gaya.html",
+      desc: "Tan removal service for a brighter, more even-looking skin tone.",
+      keys: ["d-tan", "de-tan", "detan", "tan removal"] },
+
+    { name: "Facial", url: "/services/facial-in-gaya.html",
+      desc: "Facial services for different skincare and grooming needs.",
+      keys: ["facials", "facial"], after: "(?!\\s+hair)" },
+
+    { name: "Advanced Facial", url: "/services/advanced-facial-in-gaya.html",
+      desc: "Advanced facial options for a more customised skincare experience.",
+      keys: ["advanced facial", "hydrafacial"] },
+
+    { name: "Acne Treatment", url: "/services/acne-treatment-in-gaya.html",
+      desc: "Cosmetic skincare for acne-prone skin.",
+      keys: ["acne treatment", "acne", "pimples"] },
+
+    { name: "Skin Care", url: "/services/skin-care-in-gaya.html",
+      desc: "Everyday skincare services to keep your skin healthy.",
+      keys: ["skin care", "skincare"] },
+
+    { name: "Skin Treatment", url: "/services/skin-treatment-in-gaya.html",
+      desc: "Cosmetic skin treatments for specific skin concerns.",
+      keys: ["skin treatment", "pigmentation"] },
+
+    { name: "Hair Cut", url: "/services/hair-cut-in-gaya.html",
+      desc: "Haircuts and styling for men and women.",
+      keys: ["haircut", "hair cut", "hair cutting"] },
+
+    { name: "Hair Colour", url: "/services/hair-colour-in-gaya.html",
+      desc: "Hair colouring services in a range of shades.",
+      keys: ["hair colour", "hair color", "hair coloring", "hair colouring"] },
+
+    { name: "Hair Spa", url: "/services/hair-spa-in-gaya.html",
+      desc: "Nourishing hair spa for dry, dull or frizzy hair.",
+      keys: ["hair spa"] },
+
+    { name: "Hair Styling", url: "/services/hair-styling-in-gaya.html",
+      desc: "Hair styling for parties, weddings and everyday looks.",
+      keys: ["hair styling", "hairstyle", "hairstyling"] },
+
+    { name: "Hair Straightening", url: "/services/hair-straightening-in-gaya.html",
+      desc: "Straightening options for smoother-looking hair.",
+      keys: ["hair straightening", "straightening", "rebonding"] },
+
+    { name: "Keratin Treatment", url: "/services/keratin-treatment-in-gaya.html",
+      desc: "Keratin treatment for smoother, more manageable hair.",
+      keys: ["keratin treatment", "keratin"] },
+
+    { name: "Hair Botox", url: "/services/hair-botox-in-gaya.html",
+      desc: "Hair botox treatment for frizz-prone hair.",
+      keys: ["hair botox"] },
+
+    { name: "Nanoplastia", url: "/services/nanoplastia-treatment-in-gaya.html",
+      desc: "Nanoplastia treatment for smoother, shinier hair.",
+      keys: ["nanoplastia"] },
+
+    { name: "Manicure", url: "/services/manicure-in-gaya.html",
+      desc: "Manicure for clean, well-groomed hands and nails.",
+      keys: ["manicure"] },
+
+    { name: "Pedicure", url: "/services/pedicure-in-gaya.html",
+      desc: "Pedicure for soft, well-cared-for feet.",
+      keys: ["pedicure"] },
+
+    { name: "Nail Extensions", url: "/services/nail-extension-in-gaya.html",
+      desc: "Nail extensions in styles to suit you.",
+      keys: ["nail extension", "nail extensions"] },
+
+    { name: "Bridal Makeup", url: "/services/bridal-makeup-in-gaya.html",
+      desc: "Bridal makeup for weddings and special occasions.",
+      keys: ["bridal makeup", "bridal make-up", "bridal"] },
+
+    { name: "Permanent Makeup", url: "/services/permanent-makeup-in-gaya.html",
+      desc: "Semi-permanent makeup options, discussed before booking.",
+      keys: ["permanent makeup", "permanent make-up"] }
+
+];
+
+/* Shown when an article matches fewer than 3 services */
+const DEFAULT_SERVICE_NAMES = ["Facial", "Skin Care", "Hair Spa", "Hair Cut"];
+
+
+function escapeRegExp(value) {
+    return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+}
+
+
+/* Links the FIRST mention of a service inside the article text */
+function linkFirstMention(contentEl, service) {
+
+    const walker = document.createTreeWalker(
+        contentEl,
+        NodeFilter.SHOW_TEXT,
+        {
+            acceptNode(node) {
+                if (!node.nodeValue.trim()) {
+                    return NodeFilter.FILTER_REJECT;
+                }
+                if (node.parentElement.closest("a, h1, h2, h3, h4, h5, h6, button")) {
+                    return NodeFilter.FILTER_REJECT;
+                }
+                return NodeFilter.FILTER_ACCEPT;
+            }
+        }
+    );
+
+    let node;
+
+    while ((node = walker.nextNode())) {
+
+        for (const key of service.keys) {
+
+            const regex = new RegExp(
+                "\\b(" + escapeRegExp(key) + ")\\b" + (service.after || ""),
+                "i"
+            );
+
+            const match = regex.exec(node.nodeValue);
+
+            if (!match) {
+                continue;
+            }
+
+            const before = node.nodeValue.slice(0, match.index);
+            const after  = node.nodeValue.slice(match.index + match[0].length);
+
+            const link = document.createElement("a");
+            link.href = service.url;
+            link.textContent = match[0];
+            link.className =
+                "text-[#9a7438] font-semibold underline hover:text-[#6f5127]";
+
+            node.nodeValue = before;
+            node.parentNode.insertBefore(link, node.nextSibling);
+            node.parentNode.insertBefore(
+                document.createTextNode(after),
+                link.nextSibling
+            );
+
+            return true;
+        }
+    }
+
+    return false;
+}
+
+
+function addServiceLinks(blog, contentEl) {
+
+    const MAX_INLINE_LINKS = 5;
+    const MAX_CARDS = 4;
+
+    const topText = [
+        blog.title, blog.category, blog.keywords
+    ].join(" ").toLowerCase();
+
+    const bodyText = (contentEl.textContent || "").toLowerCase();
+
+
+    /* Score each service: title/category/keywords count more */
+    const scored = SERVICE_LINKS
+        .map(service => {
+
+            let score = 0;
+
+            service.keys.forEach(key => {
+                if (topText.includes(key)) { score += 3; }
+                if (bodyText.includes(key)) { score += 1; }
+            });
+
+            return { service, score };
+
+        })
+        .filter(item => item.score > 0)
+        .sort((a, b) => b.score - a.score);
+
+
+    /* 1) Inline links inside the article */
+    let linked = 0;
+
+    scored.forEach(item => {
+        if (linked >= MAX_INLINE_LINKS) {
+            return;
+        }
+        if (linkFirstMention(contentEl, item.service)) {
+            linked++;
+        }
+    });
+
+
+    /* 2) Related services cards */
+    let cards = scored
+        .slice(0, MAX_CARDS)
+        .map(item => item.service);
+
+    if (cards.length < 3) {
+
+        DEFAULT_SERVICE_NAMES.forEach(name => {
+
+            const fallback = SERVICE_LINKS.find(s => s.name === name);
+
+            if (
+                fallback &&
+                !cards.includes(fallback) &&
+                cards.length < MAX_CARDS
+            ) {
+                cards.push(fallback);
+            }
+
+        });
+
+    }
+
+    const list = document.getElementById("related-services-list");
+    const box  = document.getElementById("related-services");
+
+    if (!list || !box) {
+        return;
+    }
+
+    list.innerHTML = cards.map(service => `
+        <a href="${service.url}"
+           class="block bg-white rounded-xl p-5 border border-[#d4af77]/20
+                  hover:border-[#d4af77] hover:shadow-md transition">
+            <h3 class="text-lg font-semibold text-[#1a1a1a] mb-1">
+                ${service.name} in Gaya
+            </h3>
+            <p class="text-sm text-gray-600 leading-6 mb-3">
+                ${service.desc}
+            </p>
+            <span class="text-sm font-semibold text-[#9a7438]">
+                Explore ${service.name} &rarr;
+            </span>
+        </a>
+    `).join("");
+
+    box.classList.remove("hidden");
+
+}
 
 
 /* =====================================================
