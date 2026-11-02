@@ -272,6 +272,11 @@
 
 
 
+
+
+
+
+
 <url>
   <loc>https://www.srunisexsalongaya.com/blog/post.html?slug=daily-skin-care-routine-healthy-looking-skin.html</loc>
   <lastmod>2026-10-22</lastmod>
@@ -293,6 +298,12 @@
 <url>
   <loc>https://www.srunisexsalongaya.com/blog/post.html?slug=how-to-choose-bridal-makeup-artist-gaya.html</loc>
   <lastmod>2026-10-27</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.7</priority>
+</url>
+<url>
+  <loc>https://www.srunisexsalongaya.com/blog/post.html?slug=hair-spa-vs-hair-conditioning-which-is-right.html</loc>
+  <lastmod>2026-11-02</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.7</priority>
 </url>
